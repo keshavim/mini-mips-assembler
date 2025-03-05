@@ -8,7 +8,12 @@
 #define GREEN "\033[0;32m"
 #define RED "\033[31m"
 #define RESET "\033[0m"
+
+#define first_non_space(p, str)                                                \
+  for ((p) = (str); (p) != NULL && *(p) != '\0' && isspace(*(p)); (p)++)
+
 int main(int argc, char *argv[]) {
+
   FILE *asm_f;
   char line[MAX_LINE_LENGTH];
 
@@ -40,19 +45,26 @@ int main(int argc, char *argv[]) {
     }
 
     if (is_data) {
-      char *p = strstr(line, ".asciiz");
-      if (!p)
+      // seperating the string on the line
+      // currently works for just asciiz
+      char *start = strstr(line, ".asciiz");
+      if (!start)
         continue;
-
-      p = strchr(p, '"') + 1;
-      char *end = p; // last char of string
+      start = strchr(start, '"') + 1;
+      char *end = start; // last char of string
       while (*((end = strchr(end, '"')) - 1) == '\\')
         ;
       *end = '\0';
 
-      data_to_hex(data_f, p, &hex_num);
+      data_to_hex(data_f, start, &hex_num);
+      // will need to add more 0's after to fillup the other data addresses
     } else {
-      fprintf(text_f, "%s\n", line);
+      // seperating line to just the instruction
+      char *start = line;
+      first_non_space(start, line);
+      line[strcspn(line, "#")] = '\0';
+      if (*start != '\0')
+        fprintf(text_f, "%s", start);
     }
   }
 

@@ -1,6 +1,7 @@
 #ifndef MIPS_CONVERTER_H
 #define MIPS_CONVERTER_H
 
+#include <ctype.h>
 #include <errno.h>
 #include <stddef.h>
 #include <stdint.h>
@@ -24,8 +25,14 @@
 #define m_sw 0x2b
 #define m_syscall 0x0c
 
+// psudo
+#define m_blt -1
+#define m_la -1
+#define m_li -1
+#define m_move -1
+
 #define instruction_init(name, type) {(name), (type), (#name)}
-#define INSTRUCTION_SIZE 15
+#define INSTRUCTION_SIZE 20 // will be bigger with more added
 #define REGISTER_SIZE 32
 
 enum InstructionType {
@@ -35,9 +42,11 @@ enum InstructionType {
   TYPE_IL,
   TYPE_IS,
   TYPE_J,
+  TYPE_PSUDO,
   TYPE_SPECIAL
 };
 
+// this makes a global array
 extern const struct Instruction {
   size_t value;
   enum InstructionType type;
@@ -53,7 +62,8 @@ typedef struct HexNumber {
 
 typedef int (*compare_func)(const void *, const void *);
 
-// instruction and register getters
+// helper funciton macros
+//  instruction and register getters
 #define INSTRUCTION_GET(var_name, key)                                         \
   const struct Instruction *var_name = &instruction_list[array_search(         \
       key, instruction_list, INSTRUCTION_SIZE, sizeof(instruction_list[0]),    \
@@ -61,6 +71,11 @@ typedef int (*compare_func)(const void *, const void *);
 #define REGISTER_GET(key)                                                      \
   array_search(key, mips_registers, REGISTER_SIZE, sizeof(char *), register_cmp)
 
+// string
+#define first_non_space(p, str)                                                \
+  for ((p) = (str); (p) != NULL && *(p) != '\0' && isspace(*(p)); (p)++)
+
+// functions definitions
 size_t array_search(const void *key, const void *src, size_t src_len,
                     size_t elem_size, compare_func cmp);
 

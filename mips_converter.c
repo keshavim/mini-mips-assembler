@@ -19,7 +19,10 @@ const struct Instruction instruction_list[] = {
     instruction_init(m_sub, TYPE_R),
     instruction_init(m_sw, TYPE_IS),
     instruction_init(m_syscall, TYPE_SPECIAL),
-};
+    instruction_init(m_blt, TYPE_PSUDO),
+    instruction_init(m_la, TYPE_PSUDO),
+    instruction_init(m_li, TYPE_PSUDO),
+    instruction_init(m_move, TYPE_PSUDO)};
 
 const char *mips_registers[] = {
     "$zero", "$at", "$v0", "$v1", "$a0", "$a1", "$a2", "$a3",
@@ -85,6 +88,7 @@ size_t parse_num(const char *str) {
 size_t convert_instruction(char **instrs) {
   INSTRUCTION_GET(instruction, instrs[0]);
 
+  // todo: add a psudo case
   switch (instruction->type) {
   case TYPE_R:
     // opcode | rs | rt| rd | shamt | funct
@@ -109,6 +113,7 @@ size_t convert_instruction(char **instrs) {
       base = REGISTER_GET(tmp[1]);
       offset = (parse_num(tmp[0]) & 0xFFFF);
     }
+    free(tmp);
     return (instruction->value << 26) | (base << 21) |
            (REGISTER_GET(instrs[1]) << 16) | (offset);
   }

@@ -1,5 +1,6 @@
 #include "mips_converter.h"
 #include <stddef.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <string.h>
 
@@ -31,8 +32,8 @@ const char *mips_registers[] = {
     "$t8",   "$t9", "$k0", "$k1", "$gp", "$sp", "$fp", "$ra"};
 
 // returns index or -1 if not found
-size_t array_search(const void *key, const void *src, size_t src_len,
-                    size_t elem_size, compare_func cmp) {
+int64_t array_search(const void *key, const void *src, size_t src_len,
+                     size_t elem_size, compare_func cmp) {
   const char *base = src;
 
   for (size_t i = 0; i < src_len; i++) {
@@ -43,12 +44,12 @@ size_t array_search(const void *key, const void *src, size_t src_len,
   return -1;
 }
 
-int instruction_cmp(const void *a, const void *b) {
+int32_t instruction_cmp(const void *a, const void *b) {
   const char *A = (const char *)a;
   const char *B = ((const struct Instruction *)b)->name + 2;
   return strcmp(A, B);
 }
-int register_cmp(const void *a, const void *b) {
+int32_t register_cmp(const void *a, const void *b) {
   const char *A = (const char *)a;
   const char *B = *(const char **)b;
   return strcmp(A, B);
@@ -85,12 +86,16 @@ size_t parse_num(const char *str) {
   return result;
 }
 
-size_t convert_instruction(char **instrs) {
-  INSTRUCTION_GET(instruction, instrs[0]);
-
+int64_t convert_instruction(char **instrs) {
+  int64_t index = INSTRUCTION_GET(instrs[0]);
+  if (index == -1) {
+    return -1;
+  }
+  const struct Instruction *instruction = &instruction_list[index];
   // todo: add a psudo case
   switch (instruction->type) {
   case TYPE_R:
+
     // opcode | rs | rt| rd | shamt | funct
     return (0 << 26) | (REGISTER_GET(instrs[2]) << 21) |
            (REGISTER_GET(instrs[3]) << 16) | (REGISTER_GET(instrs[1]) << 11) |

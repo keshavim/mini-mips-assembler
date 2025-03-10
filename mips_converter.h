@@ -27,9 +27,9 @@
 
 // psudo
 #define m_blt -1
-#define m_la -1
-#define m_li -1
-#define m_move -1
+#define m_la -2
+#define m_li -3
+#define m_move -4
 
 #define instruction_init(name, type) {(name), (type), (#name)}
 #define INSTRUCTION_SIZE 19 // will be bigger with more added
@@ -74,6 +74,12 @@ typedef int (*compare_func)(const void *, const void *);
 #define first_non_space(p, str)                                                \
   for ((p) = (str); (p) != NULL && *(p) != '\0' && isspace(*(p)); (p)++)
 
+#define parse_hex(n) (parse_num((n)) & 0xFFFF)
+
+#define type_i_shift(op, rs, rt, im)                                           \
+  (((op) << 26) | (REGISTER_GET(rs) << 21) | (REGISTER_GET(rt) << 16) |        \
+   parse_hex(im))
+
 // functions definitions
 int64_t array_search(const void *key, const void *src, size_t src_len,
                      size_t elem_size, compare_func cmp);
@@ -88,6 +94,9 @@ void free_string(char **s);
 size_t parse_num(const char *str);
 
 int64_t convert_instruction(char **instrs);
+
+int64_t convert_psudo_instruction(char **instrs,
+                                  const struct Instruction *inst);
 
 void data_to_hex(FILE *dest, const char *src, HexNumber *buf);
 

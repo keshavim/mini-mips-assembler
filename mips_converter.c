@@ -85,7 +85,6 @@ size_t parse_num(const char *str) {
   }
   return result;
 }
-
 int64_t convert_instruction(char **instrs) {
   int64_t index = INSTRUCTION_GET(instrs[0]);
   if (index == -1) {
@@ -102,41 +101,58 @@ int64_t convert_instruction(char **instrs) {
            (0 << 6) | (instruction->value);
   case TYPE_I:
     // opcode | rs | rt| immediate
-    return (instruction->value << 26) | (REGISTER_GET(instrs[2]) << 21) |
-           (REGISTER_GET(instrs[1]) << 16) | (parse_num(instrs[3]) & 0xFFFF);
+    return type_i_shift(instruction->value, instrs[2], instrs[1], instrs[3]);
   case TYPE_IB:
     //(opcode) | (rs) | (rt) | immediate
-    return (instruction->value << 26) | (REGISTER_GET(instrs[1]) << 21) |
-           (REGISTER_GET(instrs[2]) << 16) | (parse_num(instrs[3]) & 0xFFFF);
+    return type_i_shift(instruction->value, instrs[1], instrs[2], instrs[3]);
   case TYPE_IS: {
     // opcode | base | rt | offset
     char **tmp = string_split(instrs[2], "()");
-    size_t base = 0, offset = 0;
+    char *base;
+    char *offset;
     if (tmp[1] == NULL) {
-      base = REGISTER_GET(tmp[0]);
+      base = tmp[0];
+      offset = "0";
     } else {
-      base = REGISTER_GET(tmp[1]);
-      offset = (parse_num(tmp[0]) & 0xFFFF);
+      base = tmp[1];
+      offset = tmp[0];
     }
+    size_t res = type_i_shift(instruction->value, base, instrs[1], offset);
     free(tmp);
-    return (instruction->value << 26) | (base << 21) |
-           (REGISTER_GET(instrs[1]) << 16) | (offset);
+    return res;
   }
   case TYPE_IL:
     // opcode | 0 | rt | immediate
-    return (instruction->value << 26) | (0 << 21) |
-           (REGISTER_GET(instrs[1]) << 16) | (parse_num(instrs[2]) & 0xFFFF);
+    return type_i_shift(instruction->value, 0, instrs[1], instrs[2]);
   case TYPE_J:
     // opcode | instruction_index
-    return (instruction->value << 26) | (parse_num(instrs[1]) & 0xFFFF);
+    return (instruction->value << 26) | parse_hex(instrs[1]);
   case TYPE_SPECIAL:
     // opcode
     return instruction->value;
+  case TYPE_PSUDO:
+    return convert_psudo_instruction(instrs, instruction);
   default:
     return -1;
   }
 }
 
+int64_t convert_psudo_instruction(char **instrs,
+                                  const struct Instruction *inst) {
+  switch (inst->value) {
+  case m_li: {
+    return type_i_shift(m_addiu, "$zero", instrs[1], instrs[2]);
+  }
+  case m_la:
+    return 0;
+  case m_blt:
+    return 0;
+  case m_move:
+    return 0;
+  default:
+    return -1;
+  }
+}
 void data_to_hex(FILE *dest, const char *src, HexNumber *buf) {
   for (const char *p = src; *p != '\0'; p++) {
     buf->num |= ((unsigned int)*p & 0xFF) << buf->shifts * 8;

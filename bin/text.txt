@@ -1,10 +1,10 @@
-li $v0, 4
+24020004   |   li $v0, 4
 
-la $a0, input_request
+00000000   |   la $a0, input_request
 
 0000000c   |   syscall
 
-li $v0, 5
+24020005   |   li $v0, 5
 
 0000000c   |   syscall
 
@@ -18,9 +18,9 @@ j ITS_ODD
 
 LABEL  |  ITS_EVEN:	
 
-li $v0, 4
+24020004   |   li $v0, 4
 
-la $a0, even_output
+00000000   |   la $a0, even_output
 
 0000000c   |   syscall
 
@@ -28,15 +28,15 @@ j EXIT
 
 LABEL  |  ITS_ODD:	
 
-li $v0, 4
+24020004   |   li $v0, 4
 
-la $a0, odd_output
+00000000   |   la $a0, odd_output
 
 0000000c   |   syscall
 
 LABEL  |  EXIT:	
 
-li $v0, 10
+2402000a   |   li $v0, 10
 
 0000000c   |   syscall
 

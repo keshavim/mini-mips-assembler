@@ -73,11 +73,9 @@ int main(int argc, char *argv[]) {
         fprintf(text_f, "LABEL  |  %s\n", start);
         continue;
       }
-      const struct Instruction *itype = &instruction_list[index];
-      if (itype->type == TYPE_J || itype->type == TYPE_IB ||
-          itype->type == TYPE_PSUDO)
+      size_t itype = (instruction_list[index].type);
+      if (itype == TYPE_J || itype == TYPE_IB)
         fprintf(text_f, "%s\n", start);
-
       else {
         int64_t num = convert_instruction(split_line);
         fprintf(text_f, "%08lx   |   %s\n", num, start);

@@ -1,0 +1,45 @@
+24020004   |   li $v0, 4
+
+00000001   |   la $a0, input_request
+
+00000001   |   la $a0, input_request
+
+0000000c   |   syscall
+
+24020005   |   li $v0, 5
+
+0000000c   |   syscall
+
+00026020   |   add $t4, $zero, $v0
+
+31880001   |   andi $t0, $t4, 0x1
+
+beq $t0, $zero, ITS_EVEN
+
+j ITS_ODD
+
+LABEL  |  ITS_EVEN
+24020004   |   li $v0, 4
+
+00000001   |   la $a0, even_output
+
+00000001   |   la $a0, even_output
+
+0000000c   |   syscall
+
+j EXIT
+
+LABEL  |  ITS_ODD
+24020004   |   li $v0, 4
+
+00000001   |   la $a0, odd_output
+
+00000001   |   la $a0, odd_output
+
+0000000c   |   syscall
+
+LABEL  |  EXIT
+2402000a   |   li $v0, 10
+
+0000000c   |   syscall
+

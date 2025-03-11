@@ -19,6 +19,12 @@ typedef struct Label_Array {
   Label labels[NAME_SIZE];
 } Larray;
 
+extern Larray label_array;
+
+#define datalabel_add(n, s, t) label_add(&label_array, (n), (s), (t))
+#define textlabel_add(n, t) label_add(&label_array, (n), 0, (t))
+#define get_label_address(n) label_getaddress(label_array, (n))
+
 void label_add(Larray *arr, char *name, size_t data_size, size_t type);
 size_t label_getaddress(Larray *arr, char *name);
 

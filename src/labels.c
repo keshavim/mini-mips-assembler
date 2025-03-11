@@ -4,7 +4,8 @@ void label_add(Larray *arr, char *name, size_t data_size, size_t type) {
   Label *ptr = &arr->labels[arr->current];
   ptr->address = type + arr->byte_offset;
   strcpy(ptr->name, name);
-  arr->byte_offset += data_size;
+  if (type == DATA_START)
+    arr->byte_offset += data_size;
   arr->current++;
 }
 size_t label_getaddress(Larray *arr, char *label) {

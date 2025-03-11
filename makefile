@@ -12,7 +12,7 @@ $(BIN)/main.o: $(SRC)/main.c
 $(BIN)/mips_converter.o: $(SRC)/mips_converter.c
 	mkdir -p $(BIN)
 	$(CC) -o $@ -c $< $(CFLAGS)
-$(BIN)/strarrena.o: $(SRC)/strarrena.c
+$(BIN)/labels.o: $(SRC)/labels.c
 	$(CC) -o $@ -c $< $(CFLAGS)
 
 $(BIN)/mips_converter: $(BIN)/mips_converter.o $(BIN)/main.o $(BIN)/strarrena.o

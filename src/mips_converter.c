@@ -130,27 +130,34 @@ int64_t convert_instruction(char **instrs) {
   case TYPE_SPECIAL:
     // opcode
     return instruction->value;
-  case TYPE_PSUDO:
-    return convert_psudo_instruction(instrs, instruction);
   default:
     return -1;
   }
 }
 
-int64_t convert_psudo_instruction(char **instrs,
-                                  const struct Instruction *inst) {
+void convert_psudo_instruction(char **instrs, size_t *result) {
+  int64_t index = INSTRUCTION_GET(instrs[0]);
+  if (index == -1) {
+    return;
+  }
+  const struct Instruction *inst = &instruction_list[index];
   switch (inst->value) {
   case m_li: {
-    return type_i_shift(m_addiu, "$zero", instrs[1], instrs[2]);
+    result[0] = type_i_shift(m_addiu, "$zero", instrs[1], instrs[2]);
+    result[1] = 0;
+    break;
   }
   case m_la:
-    return 0;
+    result[0] = 1;
+    result[1] = 1;
+    result[2] = 0;
+    return;
   case m_blt:
-    return 0;
+    return;
   case m_move:
-    return 0;
+    return;
   default:
-    return -1;
+    return;
   }
 }
 void data_to_hex(FILE *dest, const char *src, HexNumber *buf) {

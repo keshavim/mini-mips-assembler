@@ -89,8 +89,7 @@ size_t parse_num(const char *str);
 
 int64_t convert_instruction(char **instrs);
 
-int64_t convert_psudo_instruction(char **instrs,
-                                  const struct Instruction *inst);
+void convert_psudo_instruction(char **instrs, size_t *result);
 
 void data_to_hex(FILE *dest, const char *src, HexNumber *buf);
 

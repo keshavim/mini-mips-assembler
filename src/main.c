@@ -1,5 +1,5 @@
+#include "labels.h"
 #include "mips_converter.h"
-#include "strarrena.h"
 
 #define MAX_LINE_LENGTH 1000
 #define DELIM " ,#\n\\"
@@ -88,14 +88,16 @@ int test() {
 
 int main(int argc, char *argv[]) {
 
-  Arrena arrena;
-  strarrena_init(&arrena);
+  Larray arr = {0};
+  arr.size = 100;
+  label_add(&arr, "input", strlen("Enter your integer: ") + 1, DATA_START);
+  label_add(&arr, "even", strlen("Your integer is EVEN!") + 1, DATA_START);
+  label_add(&arr, "odd", strlen("Your integer is ODD!") + 1, DATA_START);
+  arr.byte_offset = 0;
 
-  char *label1 = strarrena_add(&arrena, "hello w");
-  char *label2 = strarrena_add(&arrena, "orld");
-  char *label3 = strarrena_add(&arrena, "extra");
-
-  printf("%s%s\n%s", label1, label2, label3);
+  printf("%08lx\n", label_getaddress(&arr, "input"));
+  printf("%08lx\n", label_getaddress(&arr, "even"));
+  printf("%08lx\n", label_getaddress(&arr, "odd"));
 
   return 0;
 }

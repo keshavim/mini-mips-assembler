@@ -2,7 +2,7 @@
 #define MIPS_CONVERTER_H
 
 #include "common.h"
-#include "strarrena.h"
+#include "labels.h"
 #define m_add 0x20
 #define m_addiu 0x09
 #define m_and 0x24

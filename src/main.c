@@ -1,8 +1,5 @@
 #include "mips_converter.h"
-#include <stdint.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "strarrena.h"
 
 #define MAX_LINE_LENGTH 1000
 #define DELIM " ,#\n\\"
@@ -10,7 +7,7 @@
 #define RED "\033[31m"
 #define RESET "\033[0m"
 
-int main(int argc, char *argv[]) {
+int test() {
 
   FILE *asm_f;
   char line[MAX_LINE_LENGTH];
@@ -86,5 +83,19 @@ int main(int argc, char *argv[]) {
   fclose(asm_f);
   fclose(data_f);
   fclose(text_f);
+  return 0;
+}
+
+int main(int argc, char *argv[]) {
+
+  Arrena arrena;
+  strarrena_init(&arrena);
+
+  char *label1 = strarrena_add(&arrena, "hello w");
+  char *label2 = strarrena_add(&arrena, "orld");
+  char *label3 = strarrena_add(&arrena, "extra");
+
+  printf("%s%s\n%s", label1, label2, label3);
+
   return 0;
 }

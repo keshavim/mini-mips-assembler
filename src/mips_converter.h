@@ -1,14 +1,8 @@
 #ifndef MIPS_CONVERTER_H
 #define MIPS_CONVERTER_H
 
-#include <ctype.h>
-#include <errno.h>
-#include <stddef.h>
-#include <stdint.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
+#include "common.h"
+#include "strarrena.h"
 #define m_add 0x20
 #define m_addiu 0x09
 #define m_and 0x24

@@ -1,19 +1,22 @@
 
-
+CC = gcc
 CFLAGS = -Wall -Wextra
 
 BIN = bin
+SRC = src
 
 all: $(BIN)/mips_converter
 
-$(BIN)/main.o: main.c
-	gcc -o $@ -c $< $(CFLAGS)
-$(BIN)/mips_converter.o: mips_converter.c
+$(BIN)/main.o: $(SRC)/main.c
+	$(CC) -o $@ -c $< $(CFLAGS)
+$(BIN)/mips_converter.o: $(SRC)/mips_converter.c
 	mkdir -p $(BIN)
-	gcc -o $@ -c $< $(CFLAGS)
+	$(CC) -o $@ -c $< $(CFLAGS)
+$(BIN)/strarrena.o: $(SRC)/strarrena.c
+	$(CC) -o $@ -c $< $(CFLAGS)
 
-$(BIN)/mips_converter: $(BIN)/mips_converter.o $(BIN)/main.o
-	gcc -o $@ $^ $(CFLAGS)
+$(BIN)/mips_converter: $(BIN)/mips_converter.o $(BIN)/main.o $(BIN)/strarrena.o
+	$(CC) -o $@ $^ $(CFLAGS)
 
 run: all
 	./$(BIN)/mips_converter

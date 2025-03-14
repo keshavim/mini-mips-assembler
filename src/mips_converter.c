@@ -160,22 +160,3 @@ void convert_psudo_instruction(char **instrs, size_t *result) {
     return;
   }
 }
-void data_to_hex(FILE *dest, const char *src, HexNumber *buf) {
-  for (const char *p = src; *p != '\0'; p++) {
-    buf->num |= ((unsigned int)*p & 0xFF) << buf->shifts * 8;
-    buf->shifts += 1;
-    if (buf->shifts == 4) {
-      fprintf(dest, "%08lx\n", buf->num);
-      buf->num = 0;
-      buf->shifts = 0;
-    }
-  }
-  // adding the null
-  buf->num |= ('\0' & 0xFF) << buf->shifts * 8;
-  buf->shifts += 1;
-  if (buf->shifts == 4) {
-    fprintf(dest, "%08lx\n", buf->num);
-    buf->num = 0;
-    buf->shifts = 0;
-  }
-}

@@ -37,6 +37,7 @@ enum InstructionType {
   TYPE_IS,
   TYPE_J,
   TYPE_PSUDO,
+  TYPE_PSUDO_L,
   TYPE_SPECIAL
 };
 
@@ -48,11 +49,6 @@ extern const struct Instruction {
 } instruction_list[INSTRUCTION_SIZE];
 
 extern const char *mips_registers[REGISTER_SIZE];
-
-typedef struct HexNumber {
-  size_t num;
-  size_t shifts;
-} HexNumber;
 
 typedef int (*compare_func)(const void *, const void *);
 
@@ -90,7 +86,5 @@ size_t parse_num(const char *str);
 int64_t convert_instruction(char **instrs);
 
 void convert_psudo_instruction(char **instrs, size_t *result);
-
-void data_to_hex(FILE *dest, const char *src, HexNumber *buf);
 
 #endif

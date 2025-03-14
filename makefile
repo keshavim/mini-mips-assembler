@@ -2,24 +2,31 @@
 CC = gcc
 CFLAGS = -Wall -Wextra
 
+TARGET = program
+
 BIN = bin
 SRC = src
 
-all: $(BIN)/mips_converter
+SRC_FLS = $(wildcard $(SRC)/*.c)
 
-$(BIN)/main.o: $(SRC)/main.c
-	$(CC) -o $@ -c $< $(CFLAGS)
-$(BIN)/mips_converter.o: $(SRC)/mips_converter.c
+OBJ_FLS = $(patsubst $(SRC)/%.c,$(BIN)/%.o,$(SRC_FLS))
+
+all: $(BIN) $(BIN)/$(TARGET)
+
+$(BIN):
 	mkdir -p $(BIN)
-	$(CC) -o $@ -c $< $(CFLAGS)
-$(BIN)/labels.o: $(SRC)/labels.c
-	$(CC) -o $@ -c $< $(CFLAGS)
 
-$(BIN)/mips_converter: $(BIN)/mips_converter.o $(BIN)/main.o $(BIN)/strarrena.o
+$(BIN)/$(TARGET): $(OBJ_FLS) | $(BIN)
 	$(CC) -o $@ $^ $(CFLAGS)
 
+$(BIN)/%.o: $(SRC)/%.c | $(BIN)
+	$(CC) -o $@ -c $< $(CFLAGS)
+
 run: all
-	./$(BIN)/mips_converter
+	./$(BIN)/$(TARGET)
 
 clean:
 	rm -rf $(BIN)
+
+
+.PHONY: all run clean

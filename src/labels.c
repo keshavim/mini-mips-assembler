@@ -1,12 +1,11 @@
 #include "labels.h"
 
-void label_add(Larray *arr, char *name, size_t data_size, size_t type) {
+void label_add(Larray *arr, char *name, size_t offset, size_t type) {
   Label *ptr = &arr->labels[arr->current];
-  ptr->address = type + arr->byte_offset;
+  ptr->address = type + offset;
   strcpy(ptr->name, name);
-  if (type == DATA_START)
-    arr->byte_offset += data_size;
   arr->current++;
+  arr->byte_offset += offset;
 }
 size_t label_getaddress(Larray *arr, char *label) {
   for (size_t i = 0; i < arr->current; i++) {

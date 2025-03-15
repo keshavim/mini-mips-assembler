@@ -28,7 +28,6 @@ void data_to_hex(FILE *dest, const char *src, HexNumber *buf) {
   }
 }
 
-#define MAX_LINE_LENGTH 1024
 /*  store the data bytes from asm_file in to a text file as
  *  32 bit hex numbers. return labels for the numebers to be
  *  used with generate text file.
@@ -46,7 +45,6 @@ int64_t generate_data_file(FILE *asm_file, Larray *arr) {
   size_t offset = 0;
   while (fgets(line, sizeof(line), asm_file)) {
     if (strncmp(line, ".text", 5) == 0) {
-      arr->byte_offset = 0;
       break;
     }
 
@@ -110,6 +108,8 @@ void generate_labels(FILE *asm_file, int64_t text_start, Larray *arr) {
       label_add(arr, start, address, TEXT_ADDRESS);
       continue;
     }
+    // will make better in the future
+    // needs to work with other instrucitons
     if (strcmp(start, "la") == 0) {
       address += 4;
     }

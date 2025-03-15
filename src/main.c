@@ -2,8 +2,8 @@
 #include "mips_converter.h"
 
 #include "filereader.h"
+#include <stdio.h>
 
-#define MAX_LINE_LENGTH 1000
 #define DELIM " ,#\n\\"
 #define GREEN "\033[0;32m"
 #define RED "\033[31m"
@@ -49,7 +49,40 @@
 /*    label_array.byte_offset += 4;*/
 /*  }*/
 
-int main(int argc, char *argv[]) {
+int test_instructions() {
+
+  FILE *asm_f;
+  char line[MAX_LINE_LENGTH];
+
+  asm_f = fopen("tests.txt", "r");
+  if (asm_f == NULL) {
+    printf("Error opening file asm\n");
+    return 1;
+  }
+
+  while (fgets(line, sizeof(line), asm_f)) {
+    line[strcspn(line, "\n")] = '\0';
+
+    char *end = NULL;
+    size_t expected = strtoll(line, &end, 16);
+    char **sline = string_split(end, DELIM);
+
+    size_t result = convert_instruction(sline);
+    if (expected != result) {
+      printf("%s   %08lx    %08lx\n", sline[0], expected, result);
+      return 1;
+    }
+    fflush(stdout);
+    free_string(sline);
+  }
+
+  fclose(asm_f);
+  printf("complete");
+  return 0;
+}
+
+int test_asm_file() {
+
   Larray label_array;
 
   FILE *asm_f;
@@ -76,5 +109,10 @@ int main(int argc, char *argv[]) {
   }
   fclose(asm_f);
   fclose(text_f);
+  return 0;
+}
+
+int main(int argc, char *argv[]) {
+  test_instructions();
   return 0;
 }

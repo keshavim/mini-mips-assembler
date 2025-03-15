@@ -1,25 +1,29 @@
 #include "mips_converter.h"
-#include <stddef.h>
-#include <stdint.h>
 #include <stdio.h>
-#include <string.h>
 
+#define IT_Register (1 << 0)
+#define IT_Immideate (1 << 1)
+#define IT_Jump (1 << 2)
+#define IT_Branch (1 << 3)
+#define IT_Load (1 << 4)
+#define IT_Store (1 << 5)
+#define IT_Special (1 << 6)
 const struct Instruction instruction_list[] = {
-    instruction_init(m_add, TYPE_R),
-    instruction_init(m_addiu, TYPE_I),
-    instruction_init(m_and, TYPE_R),
-    instruction_init(m_andi, TYPE_I),
-    instruction_init(m_beq, TYPE_IB),
-    instruction_init(m_bne, TYPE_IB),
-    instruction_init(m_j, TYPE_J),
-    instruction_init(m_lui, TYPE_IL),
-    instruction_init(m_lw, TYPE_IS),
-    instruction_init(m_or, TYPE_R),
-    instruction_init(m_ori, TYPE_I),
-    instruction_init(m_slt, TYPE_R),
-    instruction_init(m_sub, TYPE_R),
-    instruction_init(m_sw, TYPE_IS),
-    instruction_init(m_syscall, TYPE_SPECIAL),
+    instruction_init(m_add, IT_Register),
+    instruction_init(m_addiu, IT_Immideate),
+    instruction_init(m_and, IT_Register),
+    instruction_init(m_andi, IT_Immideate),
+    instruction_init(m_beq, IT_Immideate | IT_Branch),
+    instruction_init(m_bne, IT_Immideate | IT_Branch),
+    instruction_init(m_j, IT_Jump),
+    instruction_init(m_lui, IT_Immideate | IT_Load),
+    instruction_init(m_lw, IT_Immideate | IT_Store),
+    instruction_init(m_or, IT_Register),
+    instruction_init(m_ori, IT_Immideate),
+    instruction_init(m_slt, IT_Register),
+    instruction_init(m_sub, IT_Register),
+    instruction_init(m_sw, IT_Immideate | IT_Store),
+    instruction_init(m_syscall, IT_Special),
     instruction_init(m_blt, TYPE_PSUDO),
     instruction_init(m_la, TYPE_PSUDO),
     instruction_init(m_li, TYPE_PSUDO),
@@ -71,70 +75,78 @@ char **string_split(char *src, char *delim) {
 
 void free_string(char **s) { free(s); }
 
-size_t parse_num(const char *str) {
-  size_t result = 0;
-  char *endptr;
-  if (strncmp(str, "0x", 2) == 0 || strncmp(str, "0X", 2) == 0) {
-    result = strtoull(str + 2, &endptr, 16);
-  } else {
-    result = strtoull(str, &endptr, 10);
-  }
-  if (*endptr != '\0' || (result == 0 && errno == EINVAL)) {
-    fprintf(stderr, "Invalid input string\n");
-    exit(1);
-  }
-  return result;
-}
+// simple macros for geting the type of the hex number of instruction
+#define rtype_to_hex(op, rs, rt, rd, shamt, val)                               \
+  ((op) << 26) | (REGISTER_GET(rs) << 21) | (REGISTER_GET(rt) << 16) |         \
+      (REGISTER_GET(rd) << 11) | ((shamt) << 6) | (val)
+
+#define itype_to_hex(op, rs, rt, im)                                           \
+  (((op) << 26) | (REGISTER_GET(rs) << 21) | (REGISTER_GET(rt) << 16) |        \
+   parseNum((im), NULL))
+
 int64_t convert_instruction(char **instrs) {
+
   int64_t index = INSTRUCTION_GET(instrs[0]);
   if (index == -1) {
     return -1;
   }
   const struct Instruction *instruction = &instruction_list[index];
   // todo: add a psudo case
-  switch (instruction->type) {
-  case TYPE_R:
+  if (instruction->type & IT_Register) {
+    fflush(stdout);
+    return rtype_to_hex(0, instrs[2], instrs[3], instrs[1], 0,
+                        instruction->value);
+    // sets the strings to the corect pointers for the specific type of
+    // immediate
+  } else if (instruction->type & IT_Immideate) {
 
-    // opcode | rs | rt| rd | shamt | funct
-    return (0 << 26) | (REGISTER_GET(instrs[2]) << 21) |
-           (REGISTER_GET(instrs[3]) << 16) | (REGISTER_GET(instrs[1]) << 11) |
-           (0 << 6) | (instruction->value);
-  case TYPE_I:
-    // opcode | rs | rt| immediate
-    return type_i_shift(instruction->value, instrs[2], instrs[1], instrs[3]);
-  case TYPE_IB:
-    //(opcode) | (rs) | (rt) | immediate
-    return type_i_shift(instruction->value, instrs[1], instrs[2], instrs[3]);
-  case TYPE_IS: {
-    // opcode | base | rt | offset
-    char **tmp = string_split(instrs[2], "()");
-    char *base;
-    char *offset;
-    if (tmp[1] == NULL) {
-      base = tmp[0];
-      offset = "0";
+    size_t op = instruction->value;
+    char *rs;
+    char *rt;
+    char *im;
+
+    if (instruction->type & IT_Branch) {
+      rs = instrs[1];
+      rt = instrs[2];
+      im = instrs[3];
+
+    } else if (instruction->type & IT_Store) {
+      rt = instrs[1];
+
+      char **tmp = string_split(instrs[2], "()");
+      if (tmp[1] == NULL) {
+        rs = tmp[0];
+        im = "0";
+      } else {
+        im = tmp[0];
+        rs = tmp[1];
+      }
+      free(tmp);
+
+    } else if (instruction->type & IT_Load) {
+      rs = "$zero";
+      rt = instrs[1];
+      im = instrs[2];
+
+      // normal immediate
     } else {
-      base = tmp[1];
-      offset = tmp[0];
+      rs = instrs[2];
+      rt = instrs[1];
+      im = instrs[3];
     }
-    size_t res = type_i_shift(instruction->value, base, instrs[1], offset);
-    free(tmp);
-    return res;
-  }
-  case TYPE_IL:
-    // opcode | 0 | rt | immediate
-    return type_i_shift(instruction->value, 0, instrs[1], instrs[2]);
-  case TYPE_J:
-    // opcode | instruction_index
-    return (instruction->value << 26) | parse_hex(instrs[1]);
-  case TYPE_SPECIAL:
-    // opcode
+    return itype_to_hex(op, rs, rt, im);
+
+  } else if (instruction->type & IT_Jump) {
+    return (instruction->value << 26) | parseNum(instrs[1], NULL);
+
+  } else if (instruction->type & IT_Special) {
     return instruction->value;
-  default:
-    return -1;
   }
+
+  return 0;
 }
 
+// will change completly
 void convert_psudo_instruction(char **instrs, size_t *result) {
   int64_t index = INSTRUCTION_GET(instrs[0]);
   if (index == -1) {
@@ -143,7 +155,7 @@ void convert_psudo_instruction(char **instrs, size_t *result) {
   const struct Instruction *inst = &instruction_list[index];
   switch (inst->value) {
   case m_li: {
-    result[0] = type_i_shift(m_addiu, "$zero", instrs[1], instrs[2]);
+    result[0] = itype_to_hex(m_addiu, "$zero", instrs[1], instrs[2]);
     result[1] = 0;
     break;
   }

@@ -3,9 +3,6 @@
 
 #include "common.h"
 
-#define DATA_ADDRESS 0x10010000
-#define TEXT_ADDRESS 0x00400000
-
 #define NAME_SIZE 100
 typedef struct Label {
   size_t address;
@@ -16,7 +13,6 @@ typedef struct Label {
 typedef struct Label_Array {
   size_t size;
   size_t current;
-  size_t byte_offset;
   Label labels[MAX_LABELS];
 } Larray;
 

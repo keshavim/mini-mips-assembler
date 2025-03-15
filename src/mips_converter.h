@@ -64,11 +64,7 @@ typedef int (*compare_func)(const void *, const void *);
 #define first_non_space(p, str)                                                \
   for ((p) = (str); (p) != NULL && *(p) != '\0' && isspace(*(p)); (p)++)
 
-#define parse_hex(n) (parse_num((n)) & 0xFFFF)
-
-#define type_i_shift(op, rs, rt, im)                                           \
-  (((op) << 26) | (REGISTER_GET(rs) << 21) | (REGISTER_GET(rt) << 16) |        \
-   parse_hex(im))
+#define parseNum(s, e) (strtoull((s), (e), 0) & 0xFFFF)
 
 // functions definitions
 int64_t array_search(const void *key, const void *src, size_t src_len,
@@ -80,8 +76,6 @@ int32_t register_cmp(const void *a, const void *b);
 // array of pointers must be freed
 char **string_split(char *src, char *delim);
 void free_string(char **s);
-
-size_t parse_num(const char *str);
 
 int64_t convert_instruction(char **instrs);
 

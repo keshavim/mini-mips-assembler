@@ -1,6 +1,3 @@
-#include "labels.h"
-#include "mips_converter.h"
-
 #include "filereader.h"
 
 // will need to add more 0's after to fillup the other data addresses

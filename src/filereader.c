@@ -1,9 +1,20 @@
 #include "filereader.h"
-#include "common.h"
-#include "labels.h"
-#include "mips_converter.h"
-#include <stdio.h>
-#include <string.h>
+
+char **string_split(char *src, char *delim) {
+  char **result = malloc(sizeof(char *) * 10);
+
+  char *tok = strtok(src, delim);
+  int idx = 0;
+  while (tok) {
+    *(result + idx++) = tok;
+    tok = strtok(NULL, delim);
+  }
+  *(result + idx++) = NULL;
+
+  return result;
+}
+
+void free_string(char **s) { free(s); }
 
 /* read a character form src, convert character to hex HexNumber
  * and add to buf number with bit or. When number is 32 bits, add
@@ -121,17 +132,86 @@ void generate_labels(FILE *asm_file, int64_t text_start, Larray *arr) {
     address += 4;
   }
 }
+
+int64_t convert_instruction(char **instrs) {
+
+  int64_t index = INSTRUCTION_GET(instrs[0]);
+  if (index == -1) {
+    return -1;
+  }
+  const struct Instruction *instruction = &instruction_list[index];
+  // todo: add a psudo case
+  if (instruction->type & IT_Register) {
+    fflush(stdout);
+    return rtype_to_hex(0, instrs[2], instrs[3], instrs[1], 0,
+                        instruction->value);
+    // sets the strings to the corect pointers for the specific type of
+    // immediate
+  }
+  if (instruction->type & IT_Immideate) {
+
+    size_t op = instruction->value;
+    char *rs;
+    char *rt;
+    char *im;
+
+    if (instruction->type & IT_Branch) {
+      rs = instrs[1];
+      rt = instrs[2];
+      im = instrs[3];
+
+    } else if (instruction->type & IT_Store) {
+      rt = instrs[1];
+
+      char **tmp = string_split(instrs[2], "()");
+      if (tmp[1] == NULL) {
+        rs = tmp[0];
+        im = "0";
+      } else {
+        im = tmp[0];
+        rs = tmp[1];
+      }
+      free(tmp);
+
+    } else if (instruction->type & IT_Load) {
+      rs = "$zero";
+      rt = instrs[1];
+      im = instrs[2];
+
+      // normal immediate
+    } else {
+      rs = instrs[2];
+      rt = instrs[1];
+      im = instrs[3];
+    }
+    return itype_to_hex(op, rs, rt, im);
+  }
+  if (instruction->type & IT_Jump) {
+    return jtype_to_hex(instruction->value, instrs[1]);
+  }
+  if (instruction->type & IT_Special) {
+    return instruction->value;
+  }
+
+  return 0;
+}
+
+void psudo_to_hex(char **in) {}
+
 static int instruction_to_hex(FILE *dest, char *src, Larray *arr) {
+
+  char line_cpy[strlen(src) + 1];
+  strcpy(line_cpy, src);
 
   char **instrs = string_split(src, DELIM_INSTR);
 
-  size_t itype = instruction_list[INSTRUCTION_GET(instrs[0])].type;
+  const struct Instruction *in = &instruction_list[INSTRUCTION_GET(instrs[0])];
 
   // will add later
-  if (itype & (IT_Psudo | IT_Multi | IT_Label))
+  if (in->type & (IT_Psudo | IT_Multi | IT_Label))
     return 1;
   size_t hex = convert_instruction(instrs);
-  fprintf(dest, "%08lx\n", hex);
+  fprintf(dest, "%08lx%-4s|%-4s%s\n", hex, "", "", line_cpy);
   return 0;
 }
 int generate_text_file(FILE *asm_file, int64_t text_start, Larray *arr) {
@@ -159,11 +239,9 @@ int generate_text_file(FILE *asm_file, int64_t text_start, Larray *arr) {
       continue;
     }
 
-    char line_trim[len + 1];
-    strcpy(line_trim, p);
-
-    if (instruction_to_hex(text_f, line_trim, arr) != 0) {
-      fprintf(text_f, "%s\n", line);
+    if (instruction_to_hex(text_f, p, arr) != 0) {
+      // fprintf(stderr, "Error: %s\n", line);
+      // return 1;
     }
   }
   fclose(text_f);

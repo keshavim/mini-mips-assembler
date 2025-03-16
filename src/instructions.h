@@ -65,19 +65,20 @@ typedef int (*compare_func)(const void *, const void *);
 
 #define parseNum(s, e) (strtoull((s), (e), 0) & 0xFFFF)
 
-// functions definitions
+// simple macros for geting the type of the hex number of instruction
+#define rtype_to_hex(op, rs, rt, rd, shamt, val)                               \
+  ((op) << 26) | (REGISTER_GET(rs) << 21) | (REGISTER_GET(rt) << 16) |         \
+      (REGISTER_GET(rd) << 11) | ((shamt) << 6) | (val)
+
+#define itype_to_hex(op, rs, rt, im)                                           \
+  (((op) << 26) | (REGISTER_GET(rs) << 21) | (REGISTER_GET(rt) << 16) |        \
+   parseNum((im), NULL))
+
+#define jtype_to_hex(op, im) ((op) << 26 | parseNum((im), NULL))
 int64_t array_search(const void *key, const void *src, size_t src_len,
                      size_t elem_size, compare_func cmp);
 
 int32_t instruction_cmp(const void *a, const void *b);
 int32_t register_cmp(const void *a, const void *b);
-
-// array of pointers must be freed
-char **string_split(char *src, char *delim);
-void free_string(char **s);
-
-int64_t convert_instruction(char **instrs);
-
-void convert_psudo_instruction(char **instrs, size_t *result);
 
 #endif

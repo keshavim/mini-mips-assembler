@@ -12,5 +12,5 @@ size_t label_getaddress(Larray *arr, char *label) {
       return arr->labels[i].address;
     }
   }
-  return 0;
+  return -1;
 }

@@ -2,12 +2,6 @@
 #include "mips_converter.h"
 
 #include "filereader.h"
-#include <stdio.h>
-
-#define DELIM " ,#\n\\"
-#define GREEN "\033[0;32m"
-#define RED "\033[31m"
-#define RESET "\033[0m"
 
 // will need to add more 0's after to fillup the other data addresses
 /*} else {*/
@@ -65,7 +59,8 @@ int test_instructions() {
 
     char *end = NULL;
     size_t expected = strtoll(line, &end, 16);
-    char **sline = string_split(end, DELIM);
+    line[strcspn(line, DELIM_END_LINE)] = '\0';
+    char **sline = string_split(end, DELIM_INSTR);
 
     size_t result = convert_instruction(sline);
     if (expected != result) {
@@ -94,25 +89,18 @@ int test_asm_file() {
     return 1;
   }
 
-  FILE *text_f;
-  text_f = fopen("bin/text.txt", "w");
-  if (text_f == NULL) {
-    printf("Error opening file text\n");
-    return 1;
-  }
-
   int64_t p = generate_data_file(asm_f, &label_array);
-  generate_labels(asm_f, p, &label_array);
+  generate_text_file(asm_f, p, &label_array);
   for (int i = 0; i < label_array.current; i++) {
     printf("%s  %08lx\n", label_array.labels[i].name,
            label_array.labels[i].address);
   }
   fclose(asm_f);
-  fclose(text_f);
   return 0;
 }
 
 int main(int argc, char *argv[]) {
-  test_instructions();
+  test_asm_file();
+
   return 0;
 }

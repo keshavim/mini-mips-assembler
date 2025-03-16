@@ -1,0 +1,18 @@
+	li $v0, 4
+	la $a0, input_request
+0000000c
+	li $v0, 5
+0000000c
+00026020
+31880001
+	beq $t0, $zero, ITS_EVEN
+	j ITS_ODD
+	li $v0, 4
+	la $a0, even_output
+0000000c
+	j EXIT
+	li $v0, 4
+	la $a0, odd_output
+0000000c
+	li $v0, 10
+0000000c

@@ -1,21 +1,14 @@
 #include "mips_converter.h"
 #include <stdio.h>
 
-#define IT_Register (1 << 0)
-#define IT_Immideate (1 << 1)
-#define IT_Jump (1 << 2)
-#define IT_Branch (1 << 3)
-#define IT_Load (1 << 4)
-#define IT_Store (1 << 5)
-#define IT_Special (1 << 6)
 const struct Instruction instruction_list[] = {
     instruction_init(m_add, IT_Register),
     instruction_init(m_addiu, IT_Immideate),
     instruction_init(m_and, IT_Register),
     instruction_init(m_andi, IT_Immideate),
-    instruction_init(m_beq, IT_Immideate | IT_Branch),
-    instruction_init(m_bne, IT_Immideate | IT_Branch),
-    instruction_init(m_j, IT_Jump),
+    instruction_init(m_beq, IT_Immideate | IT_Branch | IT_Label),
+    instruction_init(m_bne, IT_Immideate | IT_Branch | IT_Label),
+    instruction_init(m_j, IT_Jump | IT_Label),
     instruction_init(m_lui, IT_Immideate | IT_Load),
     instruction_init(m_lw, IT_Immideate | IT_Store),
     instruction_init(m_or, IT_Register),
@@ -24,10 +17,10 @@ const struct Instruction instruction_list[] = {
     instruction_init(m_sub, IT_Register),
     instruction_init(m_sw, IT_Immideate | IT_Store),
     instruction_init(m_syscall, IT_Special),
-    instruction_init(m_blt, TYPE_PSUDO),
-    instruction_init(m_la, TYPE_PSUDO),
-    instruction_init(m_li, TYPE_PSUDO),
-    instruction_init(m_move, TYPE_PSUDO)};
+    instruction_init(m_blt, IT_Psudo | IT_Label | IT_Multi),
+    instruction_init(m_la, IT_Psudo | IT_Label | IT_Multi),
+    instruction_init(m_li, IT_Psudo),
+    instruction_init(m_move, IT_Psudo)};
 
 const char *mips_registers[] = {
     "$zero", "$at", "$v0", "$v1", "$a0", "$a1", "$a2", "$a3",

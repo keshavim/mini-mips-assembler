@@ -29,22 +29,21 @@
 #define INSTRUCTION_SIZE 19 // will be bigger with more added
 #define REGISTER_SIZE 32
 
-enum InstructionType {
-  TYPE_R,
-  TYPE_I,
-  TYPE_IB,
-  TYPE_IL,
-  TYPE_IS,
-  TYPE_J,
-  TYPE_PSUDO,
-  TYPE_PSUDO_L,
-  TYPE_SPECIAL
-};
+#define IT_Register (1 << 0)
+#define IT_Immideate (1 << 1)
+#define IT_Jump (1 << 2)
+#define IT_Branch (1 << 3)
+#define IT_Load (1 << 4)
+#define IT_Store (1 << 5)
+#define IT_Special (1 << 6)
+#define IT_Psudo (1 << 7)
+#define IT_Label (1 << 8)
+#define IT_Multi (1 << 9)
 
 // this makes a global array
 extern const struct Instruction {
   size_t value;
-  enum InstructionType type;
+  size_t type;
   const char *name;
 } instruction_list[INSTRUCTION_SIZE];
 

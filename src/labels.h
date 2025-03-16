@@ -13,6 +13,7 @@ typedef struct Label {
 typedef struct Label_Array {
   size_t size;
   size_t current;
+  size_t text_start;
   Label labels[MAX_LABELS];
 } Larray;
 

@@ -1,7 +1,0 @@
-0000000c    |    syscall
-0000000c    |    syscall
-00026020    |    add $t4, $zero, $v0
-31880001    |    andi $t0, $t4, 0x1
-0000000c    |    syscall
-0000000c    |    syscall
-0000000c    |    syscall

@@ -15,12 +15,14 @@ typedef struct HexNumber {
   size_t shifts;
 } HexNumber;
 
-int64_t generate_data_file(FILE *asm_file, Larray *arr);
+int64_t generate_data_file(const char *dest, FILE *asm_file, Larray *arr);
 void generate_labels(FILE *asm_file, int64_t text_start, Larray *arr);
-int generate_text_file(FILE *asm_file, int64_t text_start, Larray *arr);
+int generate_text_file(const char *dest, FILE *asm_file, int64_t text_start,
+                       Larray *arr);
 
 int64_t convert_instruction(char **instrs);
+char *convert_psudo(char **instrs);
 // array of pointers must be freed
-char **string_split(char *src, char *delim);
+char **string_split(const char *src, char *delim);
 void free_string(char **s);
 #endif

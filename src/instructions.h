@@ -59,10 +59,6 @@ typedef int (*compare_func)(const void *, const void *);
 #define REGISTER_GET(key)                                                      \
   array_search(key, mips_registers, REGISTER_SIZE, sizeof(char *), register_cmp)
 
-// string
-#define first_non_space(p, str)                                                \
-  for ((p) = (str); (p) != NULL && *(p) != '\0' && isspace(*(p)); (p)++)
-
 #define parseNum(s, e) (strtoull((s), (e), 0) & 0xFFFF)
 
 // simple macros for geting the type of the hex number of instruction

@@ -2,6 +2,7 @@
 
 const struct Instruction instruction_list[] = {
     instruction_init(m_add, IT_Register),
+    instruction_init(m_addu, IT_Register),
     instruction_init(m_addiu, IT_Immideate),
     instruction_init(m_and, IT_Register),
     instruction_init(m_andi, IT_Immideate),

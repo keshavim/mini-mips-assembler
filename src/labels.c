@@ -7,6 +7,8 @@ void label_add(Larray *arr, char *name, size_t offset, size_t type) {
   arr->current++;
 }
 size_t label_getaddress(Larray *arr, char *label) {
+  if (arr == NULL)
+    return -1;
   for (size_t i = 0; i < arr->current; i++) {
     if (strcmp(arr->labels[i].name, label) == 0) {
       return arr->labels[i].address;

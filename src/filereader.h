@@ -20,8 +20,8 @@ void generate_labels(FILE *asm_file, int64_t text_start, Larray *arr);
 int generate_text_file(const char *dest, FILE *asm_file, int64_t text_start,
                        Larray *arr);
 
-int64_t convert_instruction(char **instrs);
-char *convert_psudo(char **instrs);
+int64_t convert_instruction(char **instrs, Larray *labels);
+char *convert_psudo(char **instrs, Larray *labels);
 // array of pointers must be freed
 char **string_split(const char *src, char *delim);
 void free_string(char **s);

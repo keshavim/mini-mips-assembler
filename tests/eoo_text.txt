@@ -1,15 +1,14 @@
 24020004 addiu $v0, $zero, 0x00000004  |  li $v0, 4
-(null)  |  la $a0, input_request
 0000000c  |  syscall
 24020005 addiu $v0, $zero, 0x00000005  |  li $v0, 5
 0000000c  |  syscall
 00026020  |  add $t4, $zero, $v0
 31880001  |  andi $t0, $t4, 0x1
+0810000a  |  j ITS_ODD
 24020004 addiu $v0, $zero, 0x00000004  |  li $v0, 4
-(null)  |  la $a0, even_output
 0000000c  |  syscall
+0810000c  |  j EXIT
 24020004 addiu $v0, $zero, 0x00000004  |  li $v0, 4
-(null)  |  la $a0, odd_output
 0000000c  |  syscall
 2402000a addiu $v0, $zero, 0x0000000a  |  li $v0, 10
 0000000c  |  syscall

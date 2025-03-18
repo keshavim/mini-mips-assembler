@@ -19,7 +19,7 @@ int test_instructions() {
     line[strcspn(line, DELIM_END_LINE)] = '\0';
     char **sline = string_split(end, DELIM_INSTR);
 
-    size_t result = convert_instruction(sline);
+    size_t result = convert_instruction(sline, NULL);
     if (expected != result) {
       printf("%s   %08lx    %08lx\n", sline[0], expected, result);
       return 1;
@@ -48,18 +48,17 @@ int test_asm_file() {
 
   int64_t p = generate_data_file("tests/eoo_data.txt", asm_f, &label_array);
   generate_text_file("tests/eoo_text.txt", asm_f, p, &label_array);
-  for (int i = 0; i < label_array.current; i++) {
-    printf("%s  %08lx\n", label_array.labels[i].name,
-           label_array.labels[i].address);
-  }
   fclose(asm_f);
   return 0;
 }
 
 int main(int argc, char *argv[]) {
   test_asm_file();
-  /*char *li = "li $v0, 4";*/
-  /*char **split = string_split(li, DELIM_INSTR);*/
-  /*printf("%s\n", convert_psudo(split));*/
+  /*char move[] = "move $t4, $v0";*/
+  /*char **split = string_split(move, DELIM_INSTR);*/
+  /*char *s = convert_psudo(split, NULL);*/
+  /*if (s != NULL)*/
+  /*  printf("%s\n", s);*/
+  /*free(s);*/
   return 0;
 }

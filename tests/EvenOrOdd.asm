@@ -8,7 +8,7 @@
 
 	# prompt the user for input
 	li $v0, 4
-	la $a0, input_request
+	#la $a0, input_request
 	syscall
 	
 	# get the input from a user
@@ -21,7 +21,7 @@
 	andi $t0, $t4, 0x1
 	
 	# if $t0 is even, branch to ITS_EVEN
-	beq $t0, $zero, ITS_EVEN
+	#beq $t0, $zero, ITS_EVEN
 	
 	# if not, unconditional jump to ITS_ODD
 	j ITS_ODD
@@ -29,7 +29,7 @@
 	# tell the user that it's even
 ITS_EVEN:	
 	li $v0, 4
-	la $a0, even_output
+	#la $a0, even_output
 	syscall
 	
 	j EXIT
@@ -37,7 +37,7 @@ ITS_EVEN:
 	# tell the user that it's odd
 ITS_ODD:	
 	li $v0, 4
-	la $a0, odd_output
+	#la $a0, odd_output
 	syscall
 	
 	# exit cleanly

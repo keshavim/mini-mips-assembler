@@ -1,5 +1,6 @@
 #include "filereader.h"
 #include "common.h"
+#include "instructions.h"
 
 // string
 static inline char *first_non_space(const char *str) {
@@ -142,14 +143,11 @@ void generate_labels(FILE *asm_file, int64_t text_start, Larray *arr) {
     }
     // will make better in the future
     // needs to work with other instrucitons
-    if (strcmp(start, "la") == 0) {
-      address += 4;
-    }
     address += 4;
   }
 }
 
-int64_t convert_instruction(char **instrs) {
+int64_t convert_instruction(char **instrs, Larray *labels) {
 
   int64_t index = INSTRUCTION_GET(instrs[0]);
   if (index == -1) {
@@ -202,7 +200,9 @@ int64_t convert_instruction(char **instrs) {
     return itype_to_hex(op, rs, rt, im);
   }
   if (instruction->type & IT_Jump) {
-    return jtype_to_hex(instruction->value, instrs[1]);
+    size_t l = label_getaddress(labels, instrs[1]);
+    size_t address = (l != -1) ? l : parseNum(instrs[1], NULL);
+    return jtype_to_hex(instruction->value, address);
   }
   if (instruction->type & IT_Special) {
     return instruction->value;
@@ -213,25 +213,42 @@ int64_t convert_instruction(char **instrs) {
 
 #define HEX_SIZE 8
 // returns the hex and new instruction for a psudo instruction
-char *convert_psudo(char **instrs) {
+char *convert_psudo(char **instrs, Larray *labels) {
 
   const struct Instruction *in = &instruction_list[INSTRUCTION_GET(instrs[0])];
   if (in->type & (IT_Multi | IT_Label))
     return NULL;
   int len = 0;
-  char *return_string;
-  if (strcmp(in->name, "li")) {
+  char *return_string = NULL;
+  if (in->value == m_li) {
     // make new word
     char new_instrs_string[MAX_LINE_LENGTH];
     snprintf(new_instrs_string, sizeof(new_instrs_string),
              "addiu %s, $zero, 0x%08llx", instrs[1], parseNum(instrs[2], NULL));
+
     /// split to parts
-    int size = HEX_SIZE + sizeof(new_instrs_string) + 2;
+    int size = HEX_SIZE + sizeof(new_instrs_string) + 3;
     return_string = malloc(size);
     char **new_instrs = string_split(new_instrs_string, DELIM_INSTR);
 
     // get hex and return string of hex and new instruction
-    size_t hex = convert_instruction(new_instrs);
+    size_t hex = convert_instruction(new_instrs, labels);
+    free(new_instrs);
+    snprintf(return_string, size, "%08lx %s", hex, new_instrs_string);
+
+  } else if (in->value == m_move) {
+
+    // make new word
+    char new_instrs_string[MAX_LINE_LENGTH];
+    snprintf(new_instrs_string, sizeof(new_instrs_string), "addu %s, $zero, %s",
+             instrs[1], instrs[2]);
+    /// split to parts
+    int size = HEX_SIZE + sizeof(new_instrs_string) + 3;
+    return_string = malloc(size);
+    char **new_instrs = string_split(new_instrs_string, DELIM_INSTR);
+
+    // get hex and return string of hex and new instruction
+    size_t hex = convert_instruction(new_instrs, labels);
     free(new_instrs);
     snprintf(return_string, size, "%08lx %s", hex, new_instrs_string);
   }
@@ -246,17 +263,14 @@ static int instruction_to_hex(FILE *dest, char *src, Larray *arr) {
 
   // will add later
   if (in->type & IT_Psudo) {
-    char *res = convert_psudo(instrs);
+    char *res = convert_psudo(instrs, arr);
     free(instrs);
     fprintf(dest, "%s%-2s|%-2s%s\n", res, "", "", src);
     free(res);
     return (0);
   }
-  if (in->type & IT_Label) {
-    return 1;
-  }
 
-  size_t hex = convert_instruction(instrs);
+  size_t hex = convert_instruction(instrs, arr);
   free(instrs);
   fprintf(dest, "%08lx%-2s|%-2s%s\n", hex, "", "", src);
   return 0;

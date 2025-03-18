@@ -4,6 +4,7 @@
 #include "common.h"
 #include "labels.h"
 #define m_add 0x20
+#define m_addu 0x21
 #define m_addiu 0x09
 #define m_and 0x24
 #define m_andi 0x0c
@@ -26,7 +27,7 @@
 #define m_move -4
 
 #define instruction_init(name, type) {(name), (type), (#name)}
-#define INSTRUCTION_SIZE 19 // will be bigger with more added
+#define MAX_INSTRUCTION 20 // will be bigger with more added
 #define REGISTER_SIZE 32
 
 #define IT_Register (1 << 0)
@@ -42,10 +43,10 @@
 
 // this makes a global array
 extern const struct Instruction {
-  size_t value;
+  ssize_t value;
   size_t type;
   const char *name;
-} instruction_list[INSTRUCTION_SIZE];
+} instruction_list[MAX_INSTRUCTION];
 
 extern const char *mips_registers[REGISTER_SIZE];
 
@@ -54,7 +55,7 @@ typedef int (*compare_func)(const void *, const void *);
 // helper funciton macros
 //  instruction and register getters
 #define INSTRUCTION_GET(key)                                                   \
-  array_search(key, instruction_list, INSTRUCTION_SIZE,                        \
+  array_search(key, instruction_list, MAX_INSTRUCTION,                         \
                sizeof(instruction_list[0]), instruction_cmp)
 #define REGISTER_GET(key)                                                      \
   array_search(key, mips_registers, REGISTER_SIZE, sizeof(char *), register_cmp)
@@ -70,7 +71,7 @@ typedef int (*compare_func)(const void *, const void *);
   (((op) << 26) | (REGISTER_GET(rs) << 21) | (REGISTER_GET(rt) << 16) |        \
    parseNum((im), NULL))
 
-#define jtype_to_hex(op, im) ((op) << 26 | parseNum((im), NULL))
+#define jtype_to_hex(op, im) ((op) << 26 | (im) >> 2)
 int64_t array_search(const void *key, const void *src, size_t src_len,
                      size_t elem_size, compare_func cmp);
 

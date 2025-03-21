@@ -2,7 +2,11 @@ A assembler I made for the mips language to learn about assembly and how to pars
 This is suposed to act similer to the MARS IDE for mips.
 It has a smaller instruction set then MARS but the instructions it has should give the same hex numbers when assembled
 
+
 to run, or clone this project and compile with an ide
+
+to run, you can download the jar in the out directory, or clone this project
+
 
 Then give the asm / text files for it to assemble
 

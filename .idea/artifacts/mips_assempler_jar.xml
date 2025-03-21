@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="mips_assempler:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/mips_assempler_jar</output-path>
+    <root id="archive" name="mips_assempler.jar">
+      <element id="module-output" name="mips_assempler" />
+    </root>
+  </artifact>
+</component>

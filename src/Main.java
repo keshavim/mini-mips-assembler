@@ -14,6 +14,7 @@ public class Main {
 
     public static void main(String[] args)  {
 
+        System.out.println((100000 >> 16) & 0xFFFF);
 
         ArrayList<String> asmfiles = new ArrayList<>();
         FileAssembler fasm = new FileAssembler();

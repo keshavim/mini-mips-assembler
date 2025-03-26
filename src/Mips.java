@@ -16,7 +16,7 @@ public class Mips {
         if (input.startsWith("0x")) {
             return Long.parseLong(input.substring(2), 16);
         }
-        return Long.parseLong(input) & 0xFFFF;
+        return Long.parseLong(input);
 
     }
 
@@ -49,7 +49,7 @@ public class Mips {
         SUB(0x22, Types.Register),
         SW(0x2B, Types.Store),
         SYSCALL(0xC, Types.Special),
-        LI(-1, Types.Immediate),
+        LI(-1, Types.Immediate, 2),
         LA(-1, Types.Load, 2),
         MOVE(-1, Types.Register),
         BLT(-1, Types.Branch, 2);

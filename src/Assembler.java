@@ -26,20 +26,24 @@ public class Assembler {
             return new long[]{convertInstruction(word_split)};
         }
         //psudo instructions
+        long address = 0;
         switch (instruction){
             case LI:
+                address = Mips.parseNumber(word_split[2]);
                 return new long[]{
-                        convertPsudo("addiu %s, $zero, %s", word_split[1], word_split[2])
+
+                        convertPsudo("lui $at, 0x%08x", (address >> 16) & 0xFFFF),
+                        convertPsudo("ori %s, $at, 0x%08x",word_split[1], address & 0xFFFF)
                 };
             case LA:
-                long address = Mips.parseNumber(word_split[2]);
+                address = Mips.parseNumber(word_split[2]);
                 return new long[]{
-                        convertPsudo("lui $at 0x%08x", (address >> 16) & 0xFFFF),
+                        convertPsudo("lui $at, 0x%08x", (address >> 16) & 0xFFFF),
                         convertPsudo("ori %s $at, 0x%08x",word_split[1], address & 0xFFFF)
                 };
             case BLT:
                 return new long[]{
-                        convertPsudo("slt $at %s %s", word_split[1], word_split[2]),
+                        convertPsudo("slt $at, %s, %s", word_split[1], word_split[2]),
                         convertPsudo("bne $at, $zero, %s", word_split[3])
                 };
             case MOVE:
@@ -93,7 +97,7 @@ public class Assembler {
         return (op << 26) |
                 (Mips.Registers.fromString(rs).getValue() << 21) |
                 (Mips.Registers.fromString(rt).getValue() << 16) |
-                Mips.parseNumber(im);
+                Mips.parseNumber(im) & 0xFFFF;
 
     }
 
@@ -101,7 +105,7 @@ public class Assembler {
         return (op << 26) |
                 (0 << 21) |
                 (Mips.Registers.fromString(rt).getValue() << 16) |
-                Mips.parseNumber(im);
+                Mips.parseNumber(im) & 0xFFFF;
 
     }
     private  long convertStore(long op, String rt, String im){
@@ -112,7 +116,7 @@ public class Assembler {
     }
     private  long convertJump(long op, String im){
         return (op << 26) |
-                Mips.parseNumber(im);
+                Mips.parseNumber(im) & 0xFFFF;
 
     }
 }

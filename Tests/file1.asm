@@ -12,7 +12,7 @@ main:
     syscall
     move $t0, $v0      # Move input to $t0
 
-    li $t1, 10         # Load immediate 10 to $t1
+    li $t1, 100000         # Load immediate 10 to $t1
     add $t2, $t0, $t1  # Add $t0 and $t1, store in $t2
 
     la $a0, result     # Load address of result string

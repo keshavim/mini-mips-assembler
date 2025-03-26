@@ -2,15 +2,19 @@ A assembler I made for the mips language to learn about assembly and how to pars
 This is suposed to act similer to the MARS IDE for mips.
 It has a smaller instruction set then MARS but the instructions it has should give the same hex numbers when assembled
 
+# How to run:
 
-to run, or clone this project and compile with an ide
+This will create a folder called "filename" in the same directory as "filename.asm" that contains the data and text hex files.
 
-to run, you can download the jar in the out directory, or clone this project
+`java -jar filename.asm`
+
+Can compile multiple at once
+
+`java -jar file1.asm file2.asm file3.asm`
+
+Can send the files to a different directory from the originals asm files.
+Will try to create the directory if not found.
+
+`java -jar filename.asm -o dirname`
 
 
-Then give the asm / text files for it to assemble
-
-it can take multiple files at once and will compile each into two files, data_filename and text_filename.
-
-It also has a "-o" flag which reads the next arg as a directory and output the files to that directory instead of the directory
-of the original file.

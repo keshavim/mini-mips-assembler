@@ -13,6 +13,7 @@ public class FileAssembler {
     private LabelList labelList;
     private long pc;
     private String outputdir;
+    private String fileDir;
 
 
     FileAssembler(){
@@ -30,6 +31,14 @@ public class FileAssembler {
     }
 
     public void assembleFile(String file){
+
+        String[] paths = createDirectory(file);
+
+        assemble_data(paths[0], paths[1]);
+        assemble_text(paths[0], paths[1]);
+    }
+
+    private String[] createDirectory(String file){
         int i = 0;
         if (file.contains("/")) {
             i = file.lastIndexOf('/') +1;
@@ -41,18 +50,25 @@ public class FileAssembler {
 
 
         String name = file.substring(i);
-        String dir = file.substring(0, i);
+        String dir = file.substring(0, i) ;
         if(outputdir == null)
             outputdir = dir;
-        assemble_data(dir, name);
-        assemble_text(dir, name);
+        fileDir =  "/"+name.substring(0, name.indexOf('.'));
+        try{
+            Files.createDirectories(Path.of(outputdir+fileDir));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        return new String[]{dir, name};
+
     }
 
     private void assemble_text(String dir, String name){
         try {
             BufferedReader asmFile = new BufferedReader(new FileReader(dir+name));
 
-            BufferedWriter textFile = new BufferedWriter(new FileWriter(outputdir+ "text_" +name));
+            BufferedWriter textFile = new BufferedWriter(new FileWriter(outputdir+fileDir+"/text.txt"));
 
             String line;
             pc = Mips.TEXT_ADDRESS;
@@ -139,9 +155,9 @@ public class FileAssembler {
     private void assemble_data(String dir, String name) {
         try {
             BufferedReader asmFile = new BufferedReader(new FileReader(dir+name));
-            Files.createDirectories(Path.of(outputdir));
 
-            BufferedWriter dataFile = new BufferedWriter(new FileWriter(outputdir +"data_"+name));
+
+            BufferedWriter dataFile = new BufferedWriter(new FileWriter(outputdir +fileDir+"/data.txt"));
 
             String line;
             pc = Mips.DATA_ADDRESS;

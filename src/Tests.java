@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class Tests {
     private static final String GREEN = "\u001B[32m";
@@ -45,10 +46,6 @@ public class Tests {
         fasm.assembleFile(testdir + files[2].getName());
 
 
-//
-
-
-
     }
     public static boolean compareFiles(String file1Path, String file2Path) throws IOException {
         try (BufferedReader reader1 = new BufferedReader(new FileReader(file1Path));
@@ -68,5 +65,40 @@ public class Tests {
             }
             return true;
         }
+    }
+
+    private static boolean _deasmble_test(long[] words){
+        for (long word : words) {
+            System.out.println(Disassembler.disassemble(word));
+        }
+
+
+
+        return true;
+
+    }
+    public static void dissassemble_test(){
+        //addiu {opcode: 09, rs(base): 17, rt: 1b, immediate(offset): 003e}
+        //ori {opcode: 0d, rs(base): 00, rt: 13, immediate(offset): ff20}
+        //sw {opcode: 2b, rs(base): 14, rt: 14, immediate(offset): 0000}
+        // lui {opcode: 0f, rs(base): 00, rt: 1d, immediate(offset): 0071}
+        // lw {opcode: 23, rs(base): 1d, rt: 12, immediate(offset): 0000}
+        // beq {opcode: 04, rs(base): 1b, rt: 0a, immediate(offset): ffae}
+        // bne {opcode: 05, rs(base): 16, rt: 0b, immediate(offset): 00aa}
+
+        long[] iwords = new long[]{ 0x26fb003e, 0x3413ff20, 0xae940000L, 0x3c1d0071, 0x8fb20000L, 0x136affae, 0x16cb00aa};
+        _deasmble_test(iwords);
+
+        // j {opcode: 02, index: 00000cd}
+
+        long[] jwords = new long[]{ 0x080000cd};
+        _deasmble_test(jwords);
+
+        // sub {opcode: 00, rs: 13, rt: 1b, rd: 09, shmt: 00, funct: 22}
+        // add {opcode: 00, rs: 18, rt: 0a, rd: 01, shmt: 00, funct: 20}
+        // slt {opcode: 00, rs: 06, rt: 1f, rd: 1c, shmt: 00, funct: 2a}
+        // and {opcode: 00, rs: 17, rt: 14, rd: 07, shmt: 00, funct: 24}
+        long[] rwords = new long[]{ 0x027b4822, 0x030a0820, 0x00dfe02a, 0x02f43824};
+        _deasmble_test(rwords);
     }
 }

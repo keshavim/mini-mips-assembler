@@ -86,41 +86,49 @@ public class Mips {
             return valueOf(name.toUpperCase());
 
         }
+        public static String getNameFromValue(int value) {
+            for (Instructions enumConstant : Instructions.values()) {
+                if (enumConstant.getValue() == value) {
+                    return enumConstant.name().toLowerCase();
+                }
+            }
+            return null; // Return null if no matching enum is found
+        }
     }
 
     public enum Registers {
-        $zero(0),
-        $at(1),
-        $v0(2),
-        $v1(3),
-        $a0(4),
-        $a1(5),
-        $a2(6),
-        $a3(7),
-        $t0(8),
-        $t1(9),
-        $t2(10),
-        $t3(11),
-        $t4(12),
-        $t5(13),
-        $t6(14),
-        $t7(15),
-        $s0(16),
-        $s1(17),
-        $s2(18),
-        $s3(19),
-        $s4(20),
-        $s5(21),
-        $s6(22),
-        $s7(23),
-        $t8(24),
-        $t9(25),
-        $k0(26),
-        $k1(27),
-        $gp(28),
-        $sp(29),
-        $fp(30),
-        $ra(31);
+        $zero(0x00),
+        $at(0x01),
+        $v0(0x02),
+        $v1   (0x03),
+        $a0   (0x04),
+        $a1   (0x05),
+        $a2   (0x06),
+        $a3   (0x07),
+        $t0   (0x08),
+        $t1   (0x09),
+        $t2   (0x0A),
+        $t3   (0x0B),
+        $t4   (0x0C),
+        $t5   (0x0D),
+        $t6   (0x0E),
+        $t7   (0x0F),
+        $s0   (0x10),
+        $s1   (0x11),
+        $s2   (0x12),
+        $s3   (0x13),
+        $s4   (0x14),
+        $s5   (0x15),
+        $s6   (0x16),
+        $s7   (0x17),
+        $t8   (0x18),
+        $t9   (0x19),
+        $k0   (0x1A),
+        $k1   (0x1B),
+        $gp   (0x1C),
+        $sp   (0x1D),
+        $fp   (0x1E),
+        $ra   (0x1F);
 
         private final long value;
 

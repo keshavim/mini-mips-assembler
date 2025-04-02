@@ -1,0 +1,1000 @@
+02b4e822 sub {opcode: 00, rs: 15, rt: 14, rd: 1d, shmt: 00, funct: 22}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+027b4822 sub {opcode: 00, rs: 13, rt: 1b, rd: 09, shmt: 00, funct: 22}
+3413ff20 ori {opcode: 0d, rs(base): 00, rt: 13, immediate(offset): ff20}
+117e00df beq {opcode: 04, rs(base): 0b, rt: 1e, immediate(offset): 00df}
+030a0820 add {opcode: 00, rs: 18, rt: 0a, rd: 01, shmt: 00, funct: 20}
+136affae beq {opcode: 04, rs(base): 1b, rt: 0a, immediate(offset): ffae}
+10440017 beq {opcode: 04, rs(base): 02, rt: 04, immediate(offset): 0017}
+080000cd j {opcode: 02, index: 00000cd}
+ae940000 sw {opcode: 2b, rs(base): 14, rt: 14, immediate(offset): 0000}
+375300ae ori {opcode: 0d, rs(base): 1a, rt: 13, immediate(offset): 00ae}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+00dfe02a slt {opcode: 00, rs: 06, rt: 1f, rd: 1c, shmt: 00, funct: 2a}
+0800008c j {opcode: 02, index: 000008c}
+1273ffe7 beq {opcode: 04, rs(base): 13, rt: 13, immediate(offset): ffe7}
+03dc0025 or {opcode: 00, rs: 1e, rt: 1c, rd: 00, shmt: 00, funct: 25}
+10c900cd beq {opcode: 04, rs(base): 06, rt: 09, immediate(offset): 00cd}
+274700c3 addiu {opcode: 09, rs(base): 1a, rt: 07, immediate(offset): 00c3}
+02f43824 and {opcode: 00, rs: 17, rt: 14, rd: 07, shmt: 00, funct: 24}
+aeed0000 sw {opcode: 2b, rs(base): 17, rt: 0d, immediate(offset): 0000}
+16cb00aa bne {opcode: 05, rs(base): 16, rt: 0b, immediate(offset): 00aa}
+0103b824 and {opcode: 00, rs: 08, rt: 03, rd: 17, shmt: 00, funct: 24}
+3c1d0071 lui {opcode: 0f, rs(base): 00, rt: 1d, immediate(offset): 0071}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+25c6004d addiu {opcode: 09, rs(base): 0e, rt: 06, immediate(offset): 004d}
+32110039 andi {opcode: 0c, rs(base): 10, rt: 11, immediate(offset): 0039}
+0161c822 sub {opcode: 00, rs: 0b, rt: 01, rd: 19, shmt: 00, funct: 22}
+03bad020 add {opcode: 00, rs: 1d, rt: 1a, rd: 1a, shmt: 00, funct: 20}
+33b9ff27 andi {opcode: 0c, rs(base): 1d, rt: 19, immediate(offset): ff27}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+0800002e j {opcode: 02, index: 000002e}
+3c08004f lui {opcode: 0f, rs(base): 00, rt: 08, immediate(offset): 004f}
+038b2024 and {opcode: 00, rs: 1c, rt: 0b, rd: 04, shmt: 00, funct: 24}
+0398802a slt {opcode: 00, rs: 1c, rt: 18, rd: 10, shmt: 00, funct: 2a}
+25fe0085 addiu {opcode: 09, rs(base): 0f, rt: 1e, immediate(offset): 0085}
+24e900d4 addiu {opcode: 09, rs(base): 07, rt: 09, immediate(offset): 00d4}
+080000ef j {opcode: 02, index: 00000ef}
+3c030054 lui {opcode: 0f, rs(base): 00, rt: 03, immediate(offset): 0054}
+271500d5 addiu {opcode: 09, rs(base): 18, rt: 15, immediate(offset): 00d5}
+3134fffe andi {opcode: 0c, rs(base): 09, rt: 14, immediate(offset): fffe}
+309d00ea andi {opcode: 0c, rs(base): 04, rt: 1d, immediate(offset): 00ea}
+0140a820 add {opcode: 00, rs: 0a, rt: 00, rd: 15, shmt: 00, funct: 20}
+01082020 add {opcode: 00, rs: 08, rt: 08, rd: 04, shmt: 00, funct: 20}
+035ca020 add {opcode: 00, rs: 1a, rt: 1c, rd: 14, shmt: 00, funct: 20}
+ac0d0000 sw {opcode: 2b, rs(base): 00, rt: 0d, immediate(offset): 0000}
+03a40020 add {opcode: 00, rs: 1d, rt: 04, rd: 00, shmt: 00, funct: 20}
+8fb20000 lw {opcode: 23, rs(base): 1d, rt: 12, immediate(offset): 0000}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+03918824 and {opcode: 00, rs: 1c, rt: 11, rd: 11, shmt: 00, funct: 24}
+3c01003d lui {opcode: 0f, rs(base): 00, rt: 01, immediate(offset): 003d}
+00a7f82a slt {opcode: 00, rs: 05, rt: 07, rd: 1f, shmt: 00, funct: 2a}
+03518025 or {opcode: 00, rs: 1a, rt: 11, rd: 10, shmt: 00, funct: 25}
+3c1400af lui {opcode: 0f, rs(base): 00, rt: 14, immediate(offset): 00af}
+0143b022 sub {opcode: 00, rs: 0a, rt: 03, rd: 16, shmt: 00, funct: 22}
+0800006c j {opcode: 02, index: 000006c}
+35fdff2c ori {opcode: 0d, rs(base): 0f, rt: 1d, immediate(offset): ff2c}
+080000ff j {opcode: 02, index: 00000ff}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+0245b824 and {opcode: 00, rs: 12, rt: 05, rd: 17, shmt: 00, funct: 24}
+3c14000d lui {opcode: 0f, rs(base): 00, rt: 14, immediate(offset): 000d}
+3610ff4d ori {opcode: 0d, rs(base): 10, rt: 10, immediate(offset): ff4d}
+245a00cf addiu {opcode: 09, rs(base): 02, rt: 1a, immediate(offset): 00cf}
+027e0020 add {opcode: 00, rs: 13, rt: 1e, rd: 00, shmt: 00, funct: 20}
+34e2ff24 ori {opcode: 0d, rs(base): 07, rt: 02, immediate(offset): ff24}
+0260f024 and {opcode: 00, rs: 13, rt: 00, rd: 1e, shmt: 00, funct: 24}
+001c1820 add {opcode: 00, rs: 00, rt: 1c, rd: 03, shmt: 00, funct: 20}
+080000e4 j {opcode: 02, index: 00000e4}
+ad6f0000 sw {opcode: 2b, rs(base): 0b, rt: 0f, immediate(offset): 0000}
+02bfc820 add {opcode: 00, rs: 15, rt: 1f, rd: 19, shmt: 00, funct: 20}
+080000a0 j {opcode: 02, index: 00000a0}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+12d3ff02 beq {opcode: 04, rs(base): 16, rt: 13, immediate(offset): ff02}
+27770089 addiu {opcode: 09, rs(base): 1b, rt: 17, immediate(offset): 0089}
+03ec782a slt {opcode: 00, rs: 1f, rt: 0c, rd: 0f, shmt: 00, funct: 2a}
+3c180093 lui {opcode: 0f, rs(base): 00, rt: 18, immediate(offset): 0093}
+12ecff0e beq {opcode: 04, rs(base): 17, rt: 0c, immediate(offset): ff0e}
+33630001 andi {opcode: 0c, rs(base): 1b, rt: 03, immediate(offset): 0001}
+0398c022 sub {opcode: 00, rs: 1c, rt: 18, rd: 18, shmt: 00, funct: 22}
+25e40023 addiu {opcode: 09, rs(base): 0f, rt: 04, immediate(offset): 0023}
+03d90822 sub {opcode: 00, rs: 1e, rt: 19, rd: 01, shmt: 00, funct: 22}
+136900bc beq {opcode: 04, rs(base): 1b, rt: 09, immediate(offset): 00bc}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+03a91024 and {opcode: 00, rs: 1d, rt: 09, rd: 02, shmt: 00, funct: 24}
+0179b825 or {opcode: 00, rs: 0b, rt: 19, rd: 17, shmt: 00, funct: 25}
+02d5282a slt {opcode: 00, rs: 16, rt: 15, rd: 05, shmt: 00, funct: 2a}
+0800005e j {opcode: 02, index: 000005e}
+024da025 or {opcode: 00, rs: 12, rt: 0d, rd: 14, shmt: 00, funct: 25}
+03353022 sub {opcode: 00, rs: 19, rt: 15, rd: 06, shmt: 00, funct: 22}
+ac270000 sw {opcode: 2b, rs(base): 01, rt: 07, immediate(offset): 0000}
+1004ffb1 beq {opcode: 04, rs(base): 00, rt: 04, immediate(offset): ffb1}
+aec50000 sw {opcode: 2b, rs(base): 16, rt: 05, immediate(offset): 0000}
+10fdffaf beq {opcode: 04, rs(base): 07, rt: 1d, immediate(offset): ffaf}
+114300a4 beq {opcode: 04, rs(base): 0a, rt: 03, immediate(offset): 00a4}
+34c3ff64 ori {opcode: 0d, rs(base): 06, rt: 03, immediate(offset): ff64}
+27b7000d addiu {opcode: 09, rs(base): 1d, rt: 17, immediate(offset): 000d}
+26fa0064 addiu {opcode: 09, rs(base): 17, rt: 1a, immediate(offset): 0064}
+156bffd9 bne {opcode: 05, rs(base): 0b, rt: 0b, immediate(offset): ffd9}
+3c150045 lui {opcode: 0f, rs(base): 00, rt: 15, immediate(offset): 0045}
+0036602a slt {opcode: 00, rs: 01, rt: 16, rd: 0c, shmt: 00, funct: 2a}
+34e9ff9e ori {opcode: 0d, rs(base): 07, rt: 09, immediate(offset): ff9e}
+31aaffee andi {opcode: 0c, rs(base): 0d, rt: 0a, immediate(offset): ffee}
+026e5024 and {opcode: 00, rs: 13, rt: 0e, rd: 0a, shmt: 00, funct: 24}
+0800007a j {opcode: 02, index: 000007a}
+0175a824 and {opcode: 00, rs: 0b, rt: 15, rd: 15, shmt: 00, funct: 24}
+3703ffa6 ori {opcode: 0d, rs(base): 18, rt: 03, immediate(offset): ffa6}
+37340077 ori {opcode: 0d, rs(base): 19, rt: 14, immediate(offset): 0077}
+03144025 or {opcode: 00, rs: 18, rt: 14, rd: 08, shmt: 00, funct: 25}
+02c2b025 or {opcode: 00, rs: 16, rt: 02, rd: 16, shmt: 00, funct: 25}
+3c150060 lui {opcode: 0f, rs(base): 00, rt: 15, immediate(offset): 0060}
+130c00d2 beq {opcode: 04, rs(base): 18, rt: 0c, immediate(offset): 00d2}
+8edd0000 lw {opcode: 23, rs(base): 16, rt: 1d, immediate(offset): 0000}
+ae240000 sw {opcode: 2b, rs(base): 11, rt: 04, immediate(offset): 0000}
+8ddf0000 lw {opcode: 23, rs(base): 0e, rt: 1f, immediate(offset): 0000}
+0264a825 or {opcode: 00, rs: 13, rt: 04, rd: 15, shmt: 00, funct: 25}
+007dc025 or {opcode: 00, rs: 03, rt: 1d, rd: 18, shmt: 00, funct: 25}
+329affc0 andi {opcode: 0c, rs(base): 14, rt: 1a, immediate(offset): ffc0}
+105aff45 beq {opcode: 04, rs(base): 02, rt: 1a, immediate(offset): ff45}
+36de0071 ori {opcode: 0d, rs(base): 16, rt: 1e, immediate(offset): 0071}
+31b900f0 andi {opcode: 0c, rs(base): 0d, rt: 19, immediate(offset): 00f0}
+026df822 sub {opcode: 00, rs: 13, rt: 0d, rd: 1f, shmt: 00, funct: 22}
+0367102a slt {opcode: 00, rs: 1b, rt: 07, rd: 02, shmt: 00, funct: 2a}
+ac690000 sw {opcode: 2b, rs(base): 03, rt: 09, immediate(offset): 0000}
+01c40822 sub {opcode: 00, rs: 0e, rt: 04, rd: 01, shmt: 00, funct: 22}
+01695020 add {opcode: 00, rs: 0b, rt: 09, rd: 0a, shmt: 00, funct: 20}
+3c11006a lui {opcode: 0f, rs(base): 00, rt: 11, immediate(offset): 006a}
+acf20000 sw {opcode: 2b, rs(base): 07, rt: 12, immediate(offset): 0000}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+01408022 sub {opcode: 00, rs: 0a, rt: 00, rd: 10, shmt: 00, funct: 22}
+00a40024 and {opcode: 00, rs: 05, rt: 04, rd: 00, shmt: 00, funct: 24}
+00f8a825 or {opcode: 00, rs: 07, rt: 18, rd: 15, shmt: 00, funct: 25}
+0158182a slt {opcode: 00, rs: 0a, rt: 18, rd: 03, shmt: 00, funct: 2a}
+3c010081 lui {opcode: 0f, rs(base): 00, rt: 01, immediate(offset): 0081}
+323400f6 andi {opcode: 0c, rs(base): 11, rt: 14, immediate(offset): 00f6}
+3c16000a lui {opcode: 0f, rs(base): 00, rt: 16, immediate(offset): 000a}
+009ed024 and {opcode: 00, rs: 04, rt: 1e, rd: 1a, shmt: 00, funct: 24}
+08000030 j {opcode: 02, index: 0000030}
+08000029 j {opcode: 02, index: 0000029}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+000ab820 add {opcode: 00, rs: 00, rt: 0a, rd: 17, shmt: 00, funct: 20}
+ae85ff94 sw {opcode: 2b, rs(base): 14, rt: 05, immediate(offset): ff94}
+8e0b00bc lw {opcode: 23, rs(base): 10, rt: 0b, immediate(offset): 00bc}
+00101024 and {opcode: 00, rs: 00, rt: 10, rd: 02, shmt: 00, funct: 24}
+0311d824 and {opcode: 00, rs: 18, rt: 11, rd: 1b, shmt: 00, funct: 24}
+af9a0000 sw {opcode: 2b, rs(base): 1c, rt: 1a, immediate(offset): 0000}
+027dd82a slt {opcode: 00, rs: 13, rt: 1d, rd: 1b, shmt: 00, funct: 2a}
+359f00bb ori {opcode: 0d, rs(base): 0c, rt: 1f, immediate(offset): 00bb}
+00118022 sub {opcode: 00, rs: 00, rt: 11, rd: 10, shmt: 00, funct: 22}
+8c930000 lw {opcode: 23, rs(base): 04, rt: 13, immediate(offset): 0000}
+34750072 ori {opcode: 0d, rs(base): 03, rt: 15, immediate(offset): 0072}
+08000002 j {opcode: 02, index: 0000002}
+3c0e0070 lui {opcode: 0f, rs(base): 00, rt: 0e, immediate(offset): 0070}
+030a9824 and {opcode: 00, rs: 18, rt: 0a, rd: 13, shmt: 00, funct: 24}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+02068020 add {opcode: 00, rs: 10, rt: 06, rd: 10, shmt: 00, funct: 20}
+02864820 add {opcode: 00, rs: 14, rt: 06, rd: 09, shmt: 00, funct: 20}
+307c0071 andi {opcode: 0c, rs(base): 03, rt: 1c, immediate(offset): 0071}
+03de4825 or {opcode: 00, rs: 1e, rt: 1e, rd: 09, shmt: 00, funct: 25}
+02a1e822 sub {opcode: 00, rs: 15, rt: 01, rd: 1d, shmt: 00, funct: 22}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+ad9dff58 sw {opcode: 2b, rs(base): 0c, rt: 1d, immediate(offset): ff58}
+3577ff30 ori {opcode: 0d, rs(base): 0b, rt: 17, immediate(offset): ff30}
+02375020 add {opcode: 00, rs: 11, rt: 17, rd: 0a, shmt: 00, funct: 20}
+8d81ff91 lw {opcode: 23, rs(base): 0c, rt: 01, immediate(offset): ff91}
+8c760000 lw {opcode: 23, rs(base): 03, rt: 16, immediate(offset): 0000}
+af700000 sw {opcode: 2b, rs(base): 1b, rt: 10, immediate(offset): 0000}
+0130c022 sub {opcode: 00, rs: 09, rt: 10, rd: 18, shmt: 00, funct: 22}
+0268f020 add {opcode: 00, rs: 13, rt: 08, rd: 1e, shmt: 00, funct: 20}
+ae2000c8 sw {opcode: 2b, rs(base): 11, rt: 00, immediate(offset): 00c8}
+316cff18 andi {opcode: 0c, rs(base): 0b, rt: 0c, immediate(offset): ff18}
+0271982a slt {opcode: 00, rs: 13, rt: 11, rd: 13, shmt: 00, funct: 2a}
+080000f5 j {opcode: 02, index: 00000f5}
+03144025 or {opcode: 00, rs: 18, rt: 14, rd: 08, shmt: 00, funct: 25}
+3c0e0053 lui {opcode: 0f, rs(base): 00, rt: 0e, immediate(offset): 0053}
+30870057 andi {opcode: 0c, rs(base): 04, rt: 07, immediate(offset): 0057}
+8c08ff81 lw {opcode: 23, rs(base): 00, rt: 08, immediate(offset): ff81}
+2641005c addiu {opcode: 09, rs(base): 12, rt: 01, immediate(offset): 005c}
+080000b7 j {opcode: 02, index: 00000b7}
+00353025 or {opcode: 00, rs: 01, rt: 15, rd: 06, shmt: 00, funct: 25}
+3378ff76 andi {opcode: 0c, rs(base): 1b, rt: 18, immediate(offset): ff76}
+005a9024 and {opcode: 00, rs: 02, rt: 1a, rd: 12, shmt: 00, funct: 24}
+003d682a slt {opcode: 00, rs: 01, rt: 1d, rd: 0d, shmt: 00, funct: 2a}
+02cfd824 and {opcode: 00, rs: 16, rt: 0f, rd: 1b, shmt: 00, funct: 24}
+028e1824 and {opcode: 00, rs: 14, rt: 0e, rd: 03, shmt: 00, funct: 24}
+35b8ff04 ori {opcode: 0d, rs(base): 0d, rt: 18, immediate(offset): ff04}
+02776822 sub {opcode: 00, rs: 13, rt: 17, rd: 0d, shmt: 00, funct: 22}
+023b6020 add {opcode: 00, rs: 11, rt: 1b, rd: 0c, shmt: 00, funct: 20}
+313b0021 andi {opcode: 0c, rs(base): 09, rt: 1b, immediate(offset): 0021}
+3748ffe0 ori {opcode: 0d, rs(base): 1a, rt: 08, immediate(offset): ffe0}
+08000044 j {opcode: 02, index: 0000044}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+24d20060 addiu {opcode: 09, rs(base): 06, rt: 12, immediate(offset): 0060}
+0800005e j {opcode: 02, index: 000005e}
+024fa822 sub {opcode: 00, rs: 12, rt: 0f, rd: 15, shmt: 00, funct: 22}
+0800002a j {opcode: 02, index: 000002a}
+3004ffa1 andi {opcode: 0c, rs(base): 00, rt: 04, immediate(offset): ffa1}
+037b8820 add {opcode: 00, rs: 1b, rt: 1b, rd: 11, shmt: 00, funct: 20}
+3640008c ori {opcode: 0d, rs(base): 12, rt: 00, immediate(offset): 008c}
+3c0200ed lui {opcode: 0f, rs(base): 00, rt: 02, immediate(offset): 00ed}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+018b8020 add {opcode: 00, rs: 0c, rt: 0b, rd: 10, shmt: 00, funct: 20}
+36da0060 ori {opcode: 0d, rs(base): 16, rt: 1a, immediate(offset): 0060}
+033a7820 add {opcode: 00, rs: 19, rt: 1a, rd: 0f, shmt: 00, funct: 20}
+3c1f00f3 lui {opcode: 0f, rs(base): 00, rt: 1f, immediate(offset): 00f3}
+03394025 or {opcode: 00, rs: 19, rt: 19, rd: 08, shmt: 00, funct: 25}
+01359824 and {opcode: 00, rs: 09, rt: 15, rd: 13, shmt: 00, funct: 24}
+1429000b bne {opcode: 05, rs(base): 01, rt: 09, immediate(offset): 000b}
+34d6008e ori {opcode: 0d, rs(base): 06, rt: 16, immediate(offset): 008e}
+277e0088 addiu {opcode: 09, rs(base): 1b, rt: 1e, immediate(offset): 0088}
+00ad1822 sub {opcode: 00, rs: 05, rt: 0d, rd: 03, shmt: 00, funct: 22}
+272300d4 addiu {opcode: 09, rs(base): 19, rt: 03, immediate(offset): 00d4}
+08000088 j {opcode: 02, index: 0000088}
+006e7820 add {opcode: 00, rs: 03, rt: 0e, rd: 0f, shmt: 00, funct: 20}
+8f310000 lw {opcode: 23, rs(base): 19, rt: 11, immediate(offset): 0000}
+afbf0000 sw {opcode: 2b, rs(base): 1d, rt: 1f, immediate(offset): 0000}
+adec0000 sw {opcode: 2b, rs(base): 0f, rt: 0c, immediate(offset): 0000}
+8ca60058 lw {opcode: 23, rs(base): 05, rt: 06, immediate(offset): 0058}
+017e4824 and {opcode: 00, rs: 0b, rt: 1e, rd: 09, shmt: 00, funct: 24}
+0335c02a slt {opcode: 00, rs: 19, rt: 15, rd: 18, shmt: 00, funct: 2a}
+10700015 beq {opcode: 04, rs(base): 03, rt: 10, immediate(offset): 0015}
+020ba020 add {opcode: 00, rs: 10, rt: 0b, rd: 14, shmt: 00, funct: 20}
+3c1100a9 lui {opcode: 0f, rs(base): 00, rt: 11, immediate(offset): 00a9}
+08000078 j {opcode: 02, index: 0000078}
+0083502a slt {opcode: 00, rs: 04, rt: 03, rd: 0a, shmt: 00, funct: 2a}
+00cda025 or {opcode: 00, rs: 06, rt: 0d, rd: 14, shmt: 00, funct: 25}
+10c100b9 beq {opcode: 04, rs(base): 06, rt: 01, immediate(offset): 00b9}
+12adff60 beq {opcode: 04, rs(base): 15, rt: 0d, immediate(offset): ff60}
+8cb80000 lw {opcode: 23, rs(base): 05, rt: 18, immediate(offset): 0000}
+02800824 and {opcode: 00, rs: 14, rt: 00, rd: 01, shmt: 00, funct: 24}
+ade50000 sw {opcode: 2b, rs(base): 0f, rt: 05, immediate(offset): 0000}
+02c4d820 add {opcode: 00, rs: 16, rt: 04, rd: 1b, shmt: 00, funct: 20}
+0800007c j {opcode: 02, index: 000007c}
+0111c820 add {opcode: 00, rs: 08, rt: 11, rd: 19, shmt: 00, funct: 20}
+3219ff29 andi {opcode: 0c, rs(base): 10, rt: 19, immediate(offset): ff29}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+31de002a andi {opcode: 0c, rs(base): 0e, rt: 1e, immediate(offset): 002a}
+ae9b0000 sw {opcode: 2b, rs(base): 14, rt: 1b, immediate(offset): 0000}
+02df6020 add {opcode: 00, rs: 16, rt: 1f, rd: 0c, shmt: 00, funct: 20}
+3202ffa8 andi {opcode: 0c, rs(base): 10, rt: 02, immediate(offset): ffa8}
+010c0025 or {opcode: 00, rs: 08, rt: 0c, rd: 00, shmt: 00, funct: 25}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+03e3b822 sub {opcode: 00, rs: 1f, rt: 03, rd: 17, shmt: 00, funct: 22}
+01071825 or {opcode: 00, rs: 08, rt: 07, rd: 03, shmt: 00, funct: 25}
+003e4820 add {opcode: 00, rs: 01, rt: 1e, rd: 09, shmt: 00, funct: 20}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+0031e022 sub {opcode: 00, rs: 01, rt: 11, rd: 1c, shmt: 00, funct: 22}
+af7b0000 sw {opcode: 2b, rs(base): 1b, rt: 1b, immediate(offset): 0000}
+32a8ffba andi {opcode: 0c, rs(base): 15, rt: 08, immediate(offset): ffba}
+3c1b0020 lui {opcode: 0f, rs(base): 00, rt: 1b, immediate(offset): 0020}
+8f1f00f3 lw {opcode: 23, rs(base): 18, rt: 1f, immediate(offset): 00f3}
+3c07009c lui {opcode: 0f, rs(base): 00, rt: 07, immediate(offset): 009c}
+02eb0025 or {opcode: 00, rs: 17, rt: 0b, rd: 00, shmt: 00, funct: 25}
+13feff3a beq {opcode: 04, rs(base): 1f, rt: 1e, immediate(offset): ff3a}
+018df024 and {opcode: 00, rs: 0c, rt: 0d, rd: 1e, shmt: 00, funct: 24}
+023ed02a slt {opcode: 00, rs: 11, rt: 1e, rd: 1a, shmt: 00, funct: 2a}
+ac810000 sw {opcode: 2b, rs(base): 04, rt: 01, immediate(offset): 0000}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+3c1f00e3 lui {opcode: 0f, rs(base): 00, rt: 1f, immediate(offset): 00e3}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+1217ff64 beq {opcode: 04, rs(base): 10, rt: 17, immediate(offset): ff64}
+1517ff00 bne {opcode: 05, rs(base): 08, rt: 17, immediate(offset): ff00}
+36a8ffb1 ori {opcode: 0d, rs(base): 15, rt: 08, immediate(offset): ffb1}
+08000059 j {opcode: 02, index: 0000059}
+00761822 sub {opcode: 00, rs: 03, rt: 16, rd: 03, shmt: 00, funct: 22}
+00fc602a slt {opcode: 00, rs: 07, rt: 1c, rd: 0c, shmt: 00, funct: 2a}
+8f6a0090 lw {opcode: 23, rs(base): 1b, rt: 0a, immediate(offset): 0090}
+12dc00ac beq {opcode: 04, rs(base): 16, rt: 1c, immediate(offset): 00ac}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+ac4d0000 sw {opcode: 2b, rs(base): 02, rt: 0d, immediate(offset): 0000}
+3c1d0005 lui {opcode: 0f, rs(base): 00, rt: 1d, immediate(offset): 0005}
+00a22820 add {opcode: 00, rs: 05, rt: 02, rd: 05, shmt: 00, funct: 20}
+1585ff6c bne {opcode: 05, rs(base): 0c, rt: 05, immediate(offset): ff6c}
+34c600b7 ori {opcode: 0d, rs(base): 06, rt: 06, immediate(offset): 00b7}
+01bd882a slt {opcode: 00, rs: 0d, rt: 1d, rd: 11, shmt: 00, funct: 2a}
+307cffca andi {opcode: 0c, rs(base): 03, rt: 1c, immediate(offset): ffca}
+080000be j {opcode: 02, index: 00000be}
+ac220000 sw {opcode: 2b, rs(base): 01, rt: 02, immediate(offset): 0000}
+080000c7 j {opcode: 02, index: 00000c7}
+17f7ffca bne {opcode: 05, rs(base): 1f, rt: 17, immediate(offset): ffca}
+0062f824 and {opcode: 00, rs: 03, rt: 02, rd: 1f, shmt: 00, funct: 24}
+00de0824 and {opcode: 00, rs: 06, rt: 1e, rd: 01, shmt: 00, funct: 24}
+03aad020 add {opcode: 00, rs: 1d, rt: 0a, rd: 1a, shmt: 00, funct: 20}
+02044822 sub {opcode: 00, rs: 10, rt: 04, rd: 09, shmt: 00, funct: 22}
+023e0820 add {opcode: 00, rs: 11, rt: 1e, rd: 01, shmt: 00, funct: 20}
+30d80031 andi {opcode: 0c, rs(base): 06, rt: 18, immediate(offset): 0031}
+1482ff3f bne {opcode: 05, rs(base): 04, rt: 02, immediate(offset): ff3f}
+022dd824 and {opcode: 00, rs: 11, rt: 0d, rd: 1b, shmt: 00, funct: 24}
+accf0000 sw {opcode: 2b, rs(base): 06, rt: 0f, immediate(offset): 0000}
+356400c4 ori {opcode: 0d, rs(base): 0b, rt: 04, immediate(offset): 00c4}
+178c00bb bne {opcode: 05, rs(base): 1c, rt: 0c, immediate(offset): 00bb}
+317800d0 andi {opcode: 0c, rs(base): 0b, rt: 18, immediate(offset): 00d0}
+15040040 bne {opcode: 05, rs(base): 08, rt: 04, immediate(offset): 0040}
+8cd10000 lw {opcode: 23, rs(base): 06, rt: 11, immediate(offset): 0000}
+3c160078 lui {opcode: 0f, rs(base): 00, rt: 16, immediate(offset): 0078}
+03b0482a slt {opcode: 00, rs: 1d, rt: 10, rd: 09, shmt: 00, funct: 2a}
+273a001b addiu {opcode: 09, rs(base): 19, rt: 1a, immediate(offset): 001b}
+8e9b0000 lw {opcode: 23, rs(base): 14, rt: 1b, immediate(offset): 0000}
+14cb0001 bne {opcode: 05, rs(base): 06, rt: 0b, immediate(offset): 0001}
+3598fff7 ori {opcode: 0d, rs(base): 0c, rt: 18, immediate(offset): fff7}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+01e59820 add {opcode: 00, rs: 0f, rt: 05, rd: 13, shmt: 00, funct: 20}
+0397c824 and {opcode: 00, rs: 1c, rt: 17, rd: 19, shmt: 00, funct: 24}
+01aa2822 sub {opcode: 00, rs: 0d, rt: 0a, rd: 05, shmt: 00, funct: 22}
+26e60029 addiu {opcode: 09, rs(base): 17, rt: 06, immediate(offset): 0029}
+37a0ff2d ori {opcode: 0d, rs(base): 1d, rt: 00, immediate(offset): ff2d}
+11c2001f beq {opcode: 04, rs(base): 0e, rt: 02, immediate(offset): 001f}
+25be0019 addiu {opcode: 09, rs(base): 0d, rt: 1e, immediate(offset): 0019}
+af200000 sw {opcode: 2b, rs(base): 19, rt: 00, immediate(offset): 0000}
+00a20824 and {opcode: 00, rs: 05, rt: 02, rd: 01, shmt: 00, funct: 24}
+267300b9 addiu {opcode: 09, rs(base): 13, rt: 13, immediate(offset): 00b9}
+acb30018 sw {opcode: 2b, rs(base): 05, rt: 13, immediate(offset): 0018}
+356f0026 ori {opcode: 0d, rs(base): 0b, rt: 0f, immediate(offset): 0026}
+1130006d beq {opcode: 04, rs(base): 09, rt: 10, immediate(offset): 006d}
+3321ff82 andi {opcode: 0c, rs(base): 19, rt: 01, immediate(offset): ff82}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+013f8024 and {opcode: 00, rs: 09, rt: 1f, rd: 10, shmt: 00, funct: 24}
+1025002b beq {opcode: 04, rs(base): 01, rt: 05, immediate(offset): 002b}
+0351f822 sub {opcode: 00, rs: 1a, rt: 11, rd: 1f, shmt: 00, funct: 22}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+00148020 add {opcode: 00, rs: 00, rt: 14, rd: 10, shmt: 00, funct: 20}
+03371824 and {opcode: 00, rs: 19, rt: 17, rd: 03, shmt: 00, funct: 24}
+347dff6e ori {opcode: 0d, rs(base): 03, rt: 1d, immediate(offset): ff6e}
+167300cf bne {opcode: 05, rs(base): 13, rt: 13, immediate(offset): 00cf}
+02d0c02a slt {opcode: 00, rs: 16, rt: 10, rd: 18, shmt: 00, funct: 2a}
+370affc5 ori {opcode: 0d, rs(base): 18, rt: 0a, immediate(offset): ffc5}
+31b1ff39 andi {opcode: 0c, rs(base): 0d, rt: 11, immediate(offset): ff39}
+00fe382a slt {opcode: 00, rs: 07, rt: 1e, rd: 07, shmt: 00, funct: 2a}
+3110fffb andi {opcode: 0c, rs(base): 08, rt: 10, immediate(offset): fffb}
+3c130095 lui {opcode: 0f, rs(base): 00, rt: 13, immediate(offset): 0095}
+03696824 and {opcode: 00, rs: 1b, rt: 09, rd: 0d, shmt: 00, funct: 24}
+01b35822 sub {opcode: 00, rs: 0d, rt: 13, rd: 0b, shmt: 00, funct: 22}
+8cd3ff5b lw {opcode: 23, rs(base): 06, rt: 13, immediate(offset): ff5b}
+02fa9824 and {opcode: 00, rs: 17, rt: 1a, rd: 13, shmt: 00, funct: 24}
+02ad502a slt {opcode: 00, rs: 15, rt: 0d, rd: 0a, shmt: 00, funct: 2a}
+131a00e4 beq {opcode: 04, rs(base): 18, rt: 1a, immediate(offset): 00e4}
+00ac1822 sub {opcode: 00, rs: 05, rt: 0c, rd: 03, shmt: 00, funct: 22}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+16ec0089 bne {opcode: 05, rs(base): 17, rt: 0c, immediate(offset): 0089}
+3c1c0000 lui {opcode: 0f, rs(base): 00, rt: 1c, immediate(offset): 0000}
+010ea822 sub {opcode: 00, rs: 08, rt: 0e, rd: 15, shmt: 00, funct: 22}
+31cc0024 andi {opcode: 0c, rs(base): 0e, rt: 0c, immediate(offset): 0024}
+3172ff4c andi {opcode: 0c, rs(base): 0b, rt: 12, immediate(offset): ff4c}
+0800008f j {opcode: 02, index: 000008f}
+002b3022 sub {opcode: 00, rs: 01, rt: 0b, rd: 06, shmt: 00, funct: 22}
+02d1e02a slt {opcode: 00, rs: 16, rt: 11, rd: 1c, shmt: 00, funct: 2a}
+8dadff45 lw {opcode: 23, rs(base): 0d, rt: 0d, immediate(offset): ff45}
+361a00a1 ori {opcode: 0d, rs(base): 10, rt: 1a, immediate(offset): 00a1}
+35200006 ori {opcode: 0d, rs(base): 09, rt: 00, immediate(offset): 0006}
+3c1400e6 lui {opcode: 0f, rs(base): 00, rt: 14, immediate(offset): 00e6}
+01829824 and {opcode: 00, rs: 0c, rt: 02, rd: 13, shmt: 00, funct: 24}
+165aff05 bne {opcode: 05, rs(base): 12, rt: 1a, immediate(offset): ff05}
+0179f820 add {opcode: 00, rs: 0b, rt: 19, rd: 1f, shmt: 00, funct: 20}
+0800000f j {opcode: 02, index: 000000f}
+03a59822 sub {opcode: 00, rs: 1d, rt: 05, rd: 13, shmt: 00, funct: 22}
+00ac182a slt {opcode: 00, rs: 05, rt: 0c, rd: 03, shmt: 00, funct: 2a}
+3217ff0d andi {opcode: 0c, rs(base): 10, rt: 17, immediate(offset): ff0d}
+af170089 sw {opcode: 2b, rs(base): 18, rt: 17, immediate(offset): 0089}
+012c4025 or {opcode: 00, rs: 09, rt: 0c, rd: 08, shmt: 00, funct: 25}
+008f2024 and {opcode: 00, rs: 04, rt: 0f, rd: 04, shmt: 00, funct: 24}
+03fbb020 add {opcode: 00, rs: 1f, rt: 1b, rd: 16, shmt: 00, funct: 20}
+001e4020 add {opcode: 00, rs: 00, rt: 1e, rd: 08, shmt: 00, funct: 20}
+01b4e020 add {opcode: 00, rs: 0d, rt: 14, rd: 1c, shmt: 00, funct: 20}
+080000ef j {opcode: 02, index: 00000ef}
+00fa5820 add {opcode: 00, rs: 07, rt: 1a, rd: 0b, shmt: 00, funct: 20}
+00257822 sub {opcode: 00, rs: 01, rt: 05, rd: 0f, shmt: 00, funct: 22}
+3c0e00a8 lui {opcode: 0f, rs(base): 00, rt: 0e, immediate(offset): 00a8}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+249300dc addiu {opcode: 09, rs(base): 04, rt: 13, immediate(offset): 00dc}
+258b0020 addiu {opcode: 09, rs(base): 0c, rt: 0b, immediate(offset): 0020}
+3071ff2f andi {opcode: 0c, rs(base): 03, rt: 11, immediate(offset): ff2f}
+0065e02a slt {opcode: 00, rs: 03, rt: 05, rd: 1c, shmt: 00, funct: 2a}
+009b5820 add {opcode: 00, rs: 04, rt: 1b, rd: 0b, shmt: 00, funct: 20}
+08000049 j {opcode: 02, index: 0000049}
+109fff47 beq {opcode: 04, rs(base): 04, rt: 1f, immediate(offset): ff47}
+8fa40000 lw {opcode: 23, rs(base): 1d, rt: 04, immediate(offset): 0000}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+0800003a j {opcode: 02, index: 000003a}
+0258c024 and {opcode: 00, rs: 12, rt: 18, rd: 18, shmt: 00, funct: 24}
+ae2b0000 sw {opcode: 2b, rs(base): 11, rt: 0b, immediate(offset): 0000}
+02c0b025 or {opcode: 00, rs: 16, rt: 00, rd: 16, shmt: 00, funct: 25}
+339bff1b andi {opcode: 0c, rs(base): 1c, rt: 1b, immediate(offset): ff1b}
+08000070 j {opcode: 02, index: 0000070}
+01859022 sub {opcode: 00, rs: 0c, rt: 05, rd: 12, shmt: 00, funct: 22}
+aff70000 sw {opcode: 2b, rs(base): 1f, rt: 17, immediate(offset): 0000}
+33a100ff andi {opcode: 0c, rs(base): 1d, rt: 01, immediate(offset): 00ff}
+afb6ff92 sw {opcode: 2b, rs(base): 1d, rt: 16, immediate(offset): ff92}
+304b0072 andi {opcode: 0c, rs(base): 02, rt: 0b, immediate(offset): 0072}
+01e7282a slt {opcode: 00, rs: 0f, rt: 07, rd: 05, shmt: 00, funct: 2a}
+aff1009e sw {opcode: 2b, rs(base): 1f, rt: 11, immediate(offset): 009e}
+0039a82a slt {opcode: 00, rs: 01, rt: 19, rd: 15, shmt: 00, funct: 2a}
+038b6822 sub {opcode: 00, rs: 1c, rt: 0b, rd: 0d, shmt: 00, funct: 22}
+01d29022 sub {opcode: 00, rs: 0e, rt: 12, rd: 12, shmt: 00, funct: 22}
+0376f824 and {opcode: 00, rs: 1b, rt: 16, rd: 1f, shmt: 00, funct: 24}
+14c900b2 bne {opcode: 05, rs(base): 06, rt: 09, immediate(offset): 00b2}
+15860032 bne {opcode: 05, rs(base): 0c, rt: 06, immediate(offset): 0032}
+01847824 and {opcode: 00, rs: 0c, rt: 04, rd: 0f, shmt: 00, funct: 24}
+002d6820 add {opcode: 00, rs: 01, rt: 0d, rd: 0d, shmt: 00, funct: 20}
+152b0048 bne {opcode: 05, rs(base): 09, rt: 0b, immediate(offset): 0048}
+ad5100fa sw {opcode: 2b, rs(base): 0a, rt: 11, immediate(offset): 00fa}
+3c1c0093 lui {opcode: 0f, rs(base): 00, rt: 1c, immediate(offset): 0093}
+00e46024 and {opcode: 00, rs: 07, rt: 04, rd: 0c, shmt: 00, funct: 24}
+143000bb bne {opcode: 05, rs(base): 01, rt: 10, immediate(offset): 00bb}
+025e502a slt {opcode: 00, rs: 12, rt: 1e, rd: 0a, shmt: 00, funct: 2a}
+8e080000 lw {opcode: 23, rs(base): 10, rt: 08, immediate(offset): 0000}
+01009820 add {opcode: 00, rs: 08, rt: 00, rd: 13, shmt: 00, funct: 20}
+af7f0000 sw {opcode: 2b, rs(base): 1b, rt: 1f, immediate(offset): 0000}
+135b002a beq {opcode: 04, rs(base): 1a, rt: 1b, immediate(offset): 002a}
+24610047 addiu {opcode: 09, rs(base): 03, rt: 01, immediate(offset): 0047}
+0800006f j {opcode: 02, index: 000006f}
+03cd8022 sub {opcode: 00, rs: 1e, rt: 0d, rd: 10, shmt: 00, funct: 22}
+266d00ac addiu {opcode: 09, rs(base): 13, rt: 0d, immediate(offset): 00ac}
+340eff39 ori {opcode: 0d, rs(base): 00, rt: 0e, immediate(offset): ff39}
+10f300c5 beq {opcode: 04, rs(base): 07, rt: 13, immediate(offset): 00c5}
+24910095 addiu {opcode: 09, rs(base): 04, rt: 11, immediate(offset): 0095}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+3160ffe4 andi {opcode: 0c, rs(base): 0b, rt: 00, immediate(offset): ffe4}
+263600f7 addiu {opcode: 09, rs(base): 11, rt: 16, immediate(offset): 00f7}
+00856825 or {opcode: 00, rs: 04, rt: 05, rd: 0d, shmt: 00, funct: 25}
+13cfffbd beq {opcode: 04, rs(base): 1e, rt: 0f, immediate(offset): ffbd}
+3c1c0031 lui {opcode: 0f, rs(base): 00, rt: 1c, immediate(offset): 0031}
+3c0c0004 lui {opcode: 0f, rs(base): 00, rt: 0c, immediate(offset): 0004}
+322200d7 andi {opcode: 0c, rs(base): 11, rt: 02, immediate(offset): 00d7}
+327600a2 andi {opcode: 0c, rs(base): 13, rt: 16, immediate(offset): 00a2}
+8e770000 lw {opcode: 23, rs(base): 13, rt: 17, immediate(offset): 0000}
+8fa600f8 lw {opcode: 23, rs(base): 1d, rt: 06, immediate(offset): 00f8}
+ae840000 sw {opcode: 2b, rs(base): 14, rt: 04, immediate(offset): 0000}
+02d8e020 add {opcode: 00, rs: 16, rt: 18, rd: 1c, shmt: 00, funct: 20}
+32e8ffca andi {opcode: 0c, rs(base): 17, rt: 08, immediate(offset): ffca}
+3266ff6b andi {opcode: 0c, rs(base): 13, rt: 06, immediate(offset): ff6b}
+01f28020 add {opcode: 00, rs: 0f, rt: 12, rd: 10, shmt: 00, funct: 20}
+00e14020 add {opcode: 00, rs: 07, rt: 01, rd: 08, shmt: 00, funct: 20}
+103cff29 beq {opcode: 04, rs(base): 01, rt: 1c, immediate(offset): ff29}
+080000f7 j {opcode: 02, index: 00000f7}
+1510005c bne {opcode: 05, rs(base): 08, rt: 10, immediate(offset): 005c}
+32f0ff75 andi {opcode: 0c, rs(base): 17, rt: 10, immediate(offset): ff75}
+0282a025 or {opcode: 00, rs: 14, rt: 02, rd: 14, shmt: 00, funct: 25}
+1175ffbd beq {opcode: 04, rs(base): 0b, rt: 15, immediate(offset): ffbd}
+37ec0064 ori {opcode: 0d, rs(base): 1f, rt: 0c, immediate(offset): 0064}
+3c090051 lui {opcode: 0f, rs(base): 00, rt: 09, immediate(offset): 0051}
+adac0000 sw {opcode: 2b, rs(base): 0d, rt: 0c, immediate(offset): 0000}
+35230093 ori {opcode: 0d, rs(base): 09, rt: 03, immediate(offset): 0093}
+0023c825 or {opcode: 00, rs: 01, rt: 03, rd: 19, shmt: 00, funct: 25}
+130bffe0 beq {opcode: 04, rs(base): 18, rt: 0b, immediate(offset): ffe0}
+0383c822 sub {opcode: 00, rs: 1c, rt: 03, rd: 19, shmt: 00, funct: 22}
+352b0048 ori {opcode: 0d, rs(base): 09, rt: 0b, immediate(offset): 0048}
+3c0e00d7 lui {opcode: 0f, rs(base): 00, rt: 0e, immediate(offset): 00d7}
+ae720000 sw {opcode: 2b, rs(base): 13, rt: 12, immediate(offset): 0000}
+0800000b j {opcode: 02, index: 000000b}
+2786009a addiu {opcode: 09, rs(base): 1c, rt: 06, immediate(offset): 009a}
+372f0006 ori {opcode: 0d, rs(base): 19, rt: 0f, immediate(offset): 0006}
+08000050 j {opcode: 02, index: 0000050}
+3208004b andi {opcode: 0c, rs(base): 10, rt: 08, immediate(offset): 004b}
+03596020 add {opcode: 00, rs: 1a, rt: 19, rd: 0c, shmt: 00, funct: 20}
+002a8025 or {opcode: 00, rs: 01, rt: 0a, rd: 10, shmt: 00, funct: 25}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+0008e82a slt {opcode: 00, rs: 00, rt: 08, rd: 1d, shmt: 00, funct: 2a}
+036f3025 or {opcode: 00, rs: 1b, rt: 0f, rd: 06, shmt: 00, funct: 25}
+8cfc0037 lw {opcode: 23, rs(base): 07, rt: 1c, immediate(offset): 0037}
+0017b820 add {opcode: 00, rs: 00, rt: 17, rd: 17, shmt: 00, funct: 20}
+24ab00cc addiu {opcode: 09, rs(base): 05, rt: 0b, immediate(offset): 00cc}
+10d40037 beq {opcode: 04, rs(base): 06, rt: 14, immediate(offset): 0037}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+02ff9825 or {opcode: 00, rs: 17, rt: 1f, rd: 13, shmt: 00, funct: 25}
+12bcffcc beq {opcode: 04, rs(base): 15, rt: 1c, immediate(offset): ffcc}
+8c0b0000 lw {opcode: 23, rs(base): 00, rt: 0b, immediate(offset): 0000}
+0800002e j {opcode: 02, index: 000002e}
+019d5825 or {opcode: 00, rs: 0c, rt: 1d, rd: 0b, shmt: 00, funct: 25}
+25de0088 addiu {opcode: 09, rs(base): 0e, rt: 1e, immediate(offset): 0088}
+0262402a slt {opcode: 00, rs: 13, rt: 02, rd: 08, shmt: 00, funct: 2a}
+325cff89 andi {opcode: 0c, rs(base): 12, rt: 1c, immediate(offset): ff89}
+00016024 and {opcode: 00, rs: 00, rt: 01, rd: 0c, shmt: 00, funct: 24}
+3c0b0024 lui {opcode: 0f, rs(base): 00, rt: 0b, immediate(offset): 0024}
+2414004e addiu {opcode: 09, rs(base): 00, rt: 14, immediate(offset): 004e}
+154900ce bne {opcode: 05, rs(base): 0a, rt: 09, immediate(offset): 00ce}
+8f710000 lw {opcode: 23, rs(base): 1b, rt: 11, immediate(offset): 0000}
+3483ffc0 ori {opcode: 0d, rs(base): 04, rt: 03, immediate(offset): ffc0}
+8f300000 lw {opcode: 23, rs(base): 19, rt: 10, immediate(offset): 0000}
+24ae00d4 addiu {opcode: 09, rs(base): 05, rt: 0e, immediate(offset): 00d4}
+1013ff4c beq {opcode: 04, rs(base): 00, rt: 13, immediate(offset): ff4c}
+37d9ffc3 ori {opcode: 0d, rs(base): 1e, rt: 19, immediate(offset): ffc3}
+002b382a slt {opcode: 00, rs: 01, rt: 0b, rd: 07, shmt: 00, funct: 2a}
+8d100000 lw {opcode: 23, rs(base): 08, rt: 10, immediate(offset): 0000}
+08000024 j {opcode: 02, index: 0000024}
+148affd4 bne {opcode: 05, rs(base): 04, rt: 0a, immediate(offset): ffd4}
+08000019 j {opcode: 02, index: 0000019}
+08000039 j {opcode: 02, index: 0000039}
+03a8d022 sub {opcode: 00, rs: 1d, rt: 08, rd: 1a, shmt: 00, funct: 22}
+13b50024 beq {opcode: 04, rs(base): 1d, rt: 15, immediate(offset): 0024}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+03d5e025 or {opcode: 00, rs: 1e, rt: 15, rd: 1c, shmt: 00, funct: 25}
+3c1f0095 lui {opcode: 0f, rs(base): 00, rt: 1f, immediate(offset): 0095}
+ac7f0095 sw {opcode: 2b, rs(base): 03, rt: 1f, immediate(offset): 0095}
+27d300a7 addiu {opcode: 09, rs(base): 1e, rt: 13, immediate(offset): 00a7}
+080000e2 j {opcode: 02, index: 00000e2}
+ac9f001b sw {opcode: 2b, rs(base): 04, rt: 1f, immediate(offset): 001b}
+10a0ff0a beq {opcode: 04, rs(base): 05, rt: 00, immediate(offset): ff0a}
+0800004f j {opcode: 02, index: 000004f}
+3029fff1 andi {opcode: 0c, rs(base): 01, rt: 09, immediate(offset): fff1}
+02d89825 or {opcode: 00, rs: 16, rt: 18, rd: 13, shmt: 00, funct: 25}
+10c6ffbf beq {opcode: 04, rs(base): 06, rt: 06, immediate(offset): ffbf}
+8d250000 lw {opcode: 23, rs(base): 09, rt: 05, immediate(offset): 0000}
+adc40000 sw {opcode: 2b, rs(base): 0e, rt: 04, immediate(offset): 0000}
+080000a8 j {opcode: 02, index: 00000a8}
+026a3824 and {opcode: 00, rs: 13, rt: 0a, rd: 07, shmt: 00, funct: 24}
+01408024 and {opcode: 00, rs: 0a, rt: 00, rd: 10, shmt: 00, funct: 24}
+3c130067 lui {opcode: 0f, rs(base): 00, rt: 13, immediate(offset): 0067}
+026e3024 and {opcode: 00, rs: 13, rt: 0e, rd: 06, shmt: 00, funct: 24}
+005d1025 or {opcode: 00, rs: 02, rt: 1d, rd: 02, shmt: 00, funct: 25}
+ac620000 sw {opcode: 2b, rs(base): 03, rt: 02, immediate(offset): 0000}
+02a29822 sub {opcode: 00, rs: 15, rt: 02, rd: 13, shmt: 00, funct: 22}
+1752ffdc bne {opcode: 05, rs(base): 1a, rt: 12, immediate(offset): ffdc}
+080000e4 j {opcode: 02, index: 00000e4}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+3738ffd0 ori {opcode: 0d, rs(base): 19, rt: 18, immediate(offset): ffd0}
+0154b025 or {opcode: 00, rs: 0a, rt: 14, rd: 16, shmt: 00, funct: 25}
+3c0b001f lui {opcode: 0f, rs(base): 00, rt: 0b, immediate(offset): 001f}
+af1100cb sw {opcode: 2b, rs(base): 18, rt: 11, immediate(offset): 00cb}
+329c0035 andi {opcode: 0c, rs(base): 14, rt: 1c, immediate(offset): 0035}
+031b182a slt {opcode: 00, rs: 18, rt: 1b, rd: 03, shmt: 00, funct: 2a}
+8c5f0000 lw {opcode: 23, rs(base): 02, rt: 1f, immediate(offset): 0000}
+33b7ff98 andi {opcode: 0c, rs(base): 1d, rt: 17, immediate(offset): ff98}
+3c0e0081 lui {opcode: 0f, rs(base): 00, rt: 0e, immediate(offset): 0081}
+371e002f ori {opcode: 0d, rs(base): 18, rt: 1e, immediate(offset): 002f}
+3285ffbf andi {opcode: 0c, rs(base): 14, rt: 05, immediate(offset): ffbf}
+339affb8 andi {opcode: 0c, rs(base): 1c, rt: 1a, immediate(offset): ffb8}
+0800004d j {opcode: 02, index: 000004d}
+00b2b022 sub {opcode: 00, rs: 05, rt: 12, rd: 16, shmt: 00, funct: 22}
+3218ffa3 andi {opcode: 0c, rs(base): 10, rt: 18, immediate(offset): ffa3}
+14d700b3 bne {opcode: 05, rs(base): 06, rt: 17, immediate(offset): 00b3}
+13bcfffd beq {opcode: 04, rs(base): 1d, rt: 1c, immediate(offset): fffd}
+37b900dd ori {opcode: 0d, rs(base): 1d, rt: 19, immediate(offset): 00dd}
+00d5402a slt {opcode: 00, rs: 06, rt: 15, rd: 08, shmt: 00, funct: 2a}
+256f00aa addiu {opcode: 09, rs(base): 0b, rt: 0f, immediate(offset): 00aa}
+25410067 addiu {opcode: 09, rs(base): 0a, rt: 01, immediate(offset): 0067}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+347400da ori {opcode: 0d, rs(base): 03, rt: 14, immediate(offset): 00da}
+147f00f7 bne {opcode: 05, rs(base): 03, rt: 1f, immediate(offset): 00f7}
+1348ff5e beq {opcode: 04, rs(base): 1a, rt: 08, immediate(offset): ff5e}
+8d200000 lw {opcode: 23, rs(base): 09, rt: 00, immediate(offset): 0000}
+02723825 or {opcode: 00, rs: 13, rt: 12, rd: 07, shmt: 00, funct: 25}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+02dce825 or {opcode: 00, rs: 16, rt: 1c, rd: 1d, shmt: 00, funct: 25}
+0146682a slt {opcode: 00, rs: 0a, rt: 06, rd: 0d, shmt: 00, funct: 2a}
+08000060 j {opcode: 02, index: 0000060}
+080000dd j {opcode: 02, index: 00000dd}
+321eff28 andi {opcode: 0c, rs(base): 10, rt: 1e, immediate(offset): ff28}
+0129802a slt {opcode: 00, rs: 09, rt: 09, rd: 10, shmt: 00, funct: 2a}
+12a600ee beq {opcode: 04, rs(base): 15, rt: 06, immediate(offset): 00ee}
+02756820 add {opcode: 00, rs: 13, rt: 15, rd: 0d, shmt: 00, funct: 20}
+8cf80000 lw {opcode: 23, rs(base): 07, rt: 18, immediate(offset): 0000}
+25470080 addiu {opcode: 09, rs(base): 0a, rt: 07, immediate(offset): 0080}
+338600bb andi {opcode: 0c, rs(base): 1c, rt: 06, immediate(offset): 00bb}
+3c1a00f2 lui {opcode: 0f, rs(base): 00, rt: 1a, immediate(offset): 00f2}
+3c0c0063 lui {opcode: 0f, rs(base): 00, rt: 0c, immediate(offset): 0063}
+03a3202a slt {opcode: 00, rs: 1d, rt: 03, rd: 04, shmt: 00, funct: 2a}
+8f37ffe2 lw {opcode: 23, rs(base): 19, rt: 17, immediate(offset): ffe2}
+0800003c j {opcode: 02, index: 000003c}
+102000dd beq {opcode: 04, rs(base): 01, rt: 00, immediate(offset): 00dd}
+30b3ffcf andi {opcode: 0c, rs(base): 05, rt: 13, immediate(offset): ffcf}
+03d68825 or {opcode: 00, rs: 1e, rt: 16, rd: 11, shmt: 00, funct: 25}
+3c1100fb lui {opcode: 0f, rs(base): 00, rt: 11, immediate(offset): 00fb}
+03317825 or {opcode: 00, rs: 19, rt: 11, rd: 0f, shmt: 00, funct: 25}
+080000a4 j {opcode: 02, index: 00000a4}
+08000044 j {opcode: 02, index: 0000044}
+080000e0 j {opcode: 02, index: 00000e0}
+3c03006e lui {opcode: 0f, rs(base): 00, rt: 03, immediate(offset): 006e}
+25ef00ce addiu {opcode: 09, rs(base): 0f, rt: 0f, immediate(offset): 00ce}
+3c1300ac lui {opcode: 0f, rs(base): 00, rt: 13, immediate(offset): 00ac}
+3c1100d3 lui {opcode: 0f, rs(base): 00, rt: 11, immediate(offset): 00d3}
+16dfff2c bne {opcode: 05, rs(base): 16, rt: 1f, immediate(offset): ff2c}
+018ec02a slt {opcode: 00, rs: 0c, rt: 0e, rd: 18, shmt: 00, funct: 2a}
+142600b1 bne {opcode: 05, rs(base): 01, rt: 06, immediate(offset): 00b1}
+133a0076 beq {opcode: 04, rs(base): 19, rt: 1a, immediate(offset): 0076}
+ae0f0000 sw {opcode: 2b, rs(base): 10, rt: 0f, immediate(offset): 0000}
+371d00ca ori {opcode: 0d, rs(base): 18, rt: 1d, immediate(offset): 00ca}
+02f57020 add {opcode: 00, rs: 17, rt: 15, rd: 0e, shmt: 00, funct: 20}
+02e8a02a slt {opcode: 00, rs: 17, rt: 08, rd: 14, shmt: 00, funct: 2a}
+0095d020 add {opcode: 00, rs: 04, rt: 15, rd: 1a, shmt: 00, funct: 20}
+10c90082 beq {opcode: 04, rs(base): 06, rt: 09, immediate(offset): 0082}
+0257f02a slt {opcode: 00, rs: 12, rt: 17, rd: 1e, shmt: 00, funct: 2a}
+00a1a024 and {opcode: 00, rs: 05, rt: 01, rd: 14, shmt: 00, funct: 24}
+02db502a slt {opcode: 00, rs: 16, rt: 1b, rd: 0a, shmt: 00, funct: 2a}
+080000a6 j {opcode: 02, index: 00000a6}
+00489022 sub {opcode: 00, rs: 02, rt: 08, rd: 12, shmt: 00, funct: 22}
+31e5ff68 andi {opcode: 0c, rs(base): 0f, rt: 05, immediate(offset): ff68}
+146b00b0 bne {opcode: 05, rs(base): 03, rt: 0b, immediate(offset): 00b0}
+34d2009b ori {opcode: 0d, rs(base): 06, rt: 12, immediate(offset): 009b}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+176600cf bne {opcode: 05, rs(base): 1b, rt: 06, immediate(offset): 00cf}
+01691024 and {opcode: 00, rs: 0b, rt: 09, rd: 02, shmt: 00, funct: 24}
+0145f822 sub {opcode: 00, rs: 0a, rt: 05, rd: 1f, shmt: 00, funct: 22}
+16ce0033 bne {opcode: 05, rs(base): 16, rt: 0e, immediate(offset): 0033}
+8d970000 lw {opcode: 23, rs(base): 0c, rt: 17, immediate(offset): 0000}
+25020088 addiu {opcode: 09, rs(base): 08, rt: 02, immediate(offset): 0088}
+00959025 or {opcode: 00, rs: 04, rt: 15, rd: 12, shmt: 00, funct: 25}
+1340ff0a beq {opcode: 04, rs(base): 1a, rt: 00, immediate(offset): ff0a}
+accb0000 sw {opcode: 2b, rs(base): 06, rt: 0b, immediate(offset): 0000}
+00168020 add {opcode: 00, rs: 00, rt: 16, rd: 10, shmt: 00, funct: 20}
+8df60000 lw {opcode: 23, rs(base): 0f, rt: 16, immediate(offset): 0000}
+35fd0007 ori {opcode: 0d, rs(base): 0f, rt: 1d, immediate(offset): 0007}
+24520058 addiu {opcode: 09, rs(base): 02, rt: 12, immediate(offset): 0058}
+169200eb bne {opcode: 05, rs(base): 14, rt: 12, immediate(offset): 00eb}
+ae5efffd sw {opcode: 2b, rs(base): 12, rt: 1e, immediate(offset): fffd}
+24a50082 addiu {opcode: 09, rs(base): 05, rt: 05, immediate(offset): 0082}
+004f0024 and {opcode: 00, rs: 02, rt: 0f, rd: 00, shmt: 00, funct: 24}
+379c0049 ori {opcode: 0d, rs(base): 1c, rt: 1c, immediate(offset): 0049}
+1681003d bne {opcode: 05, rs(base): 14, rt: 01, immediate(offset): 003d}
+aeb20000 sw {opcode: 2b, rs(base): 15, rt: 12, immediate(offset): 0000}
+318e00ce andi {opcode: 0c, rs(base): 0c, rt: 0e, immediate(offset): 00ce}
+14dcfff1 bne {opcode: 05, rs(base): 06, rt: 1c, immediate(offset): fff1}
+ad9d0000 sw {opcode: 2b, rs(base): 0c, rt: 1d, immediate(offset): 0000}
+10d7ffcb beq {opcode: 04, rs(base): 06, rt: 17, immediate(offset): ffcb}
+37a90043 ori {opcode: 0d, rs(base): 1d, rt: 09, immediate(offset): 0043}
+8e68ff83 lw {opcode: 23, rs(base): 13, rt: 08, immediate(offset): ff83}
+3c040098 lui {opcode: 0f, rs(base): 00, rt: 04, immediate(offset): 0098}
+8e9000b7 lw {opcode: 23, rs(base): 14, rt: 10, immediate(offset): 00b7}
+01619025 or {opcode: 00, rs: 0b, rt: 01, rd: 12, shmt: 00, funct: 25}
+24c50039 addiu {opcode: 09, rs(base): 06, rt: 05, immediate(offset): 0039}
+8f8d00fe lw {opcode: 23, rs(base): 1c, rt: 0d, immediate(offset): 00fe}
+33adffe1 andi {opcode: 0c, rs(base): 1d, rt: 0d, immediate(offset): ffe1}
+1106ffb2 beq {opcode: 04, rs(base): 08, rt: 06, immediate(offset): ffb2}
+038be022 sub {opcode: 00, rs: 1c, rt: 0b, rd: 1c, shmt: 00, funct: 22}
+34df004c ori {opcode: 0d, rs(base): 06, rt: 1f, immediate(offset): 004c}
+03b33022 sub {opcode: 00, rs: 1d, rt: 13, rd: 06, shmt: 00, funct: 22}
+8d2e0000 lw {opcode: 23, rs(base): 09, rt: 0e, immediate(offset): 0000}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+11090041 beq {opcode: 04, rs(base): 08, rt: 09, immediate(offset): 0041}
+01664020 add {opcode: 00, rs: 0b, rt: 06, rd: 08, shmt: 00, funct: 20}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+37e4004b ori {opcode: 0d, rs(base): 1f, rt: 04, immediate(offset): 004b}
+acaffffd sw {opcode: 2b, rs(base): 05, rt: 0f, immediate(offset): fffd}
+03b9e022 sub {opcode: 00, rs: 1d, rt: 19, rd: 1c, shmt: 00, funct: 22}
+01b60824 and {opcode: 00, rs: 0d, rt: 16, rd: 01, shmt: 00, funct: 24}
+8d720000 lw {opcode: 23, rs(base): 0b, rt: 12, immediate(offset): 0000}
+03030822 sub {opcode: 00, rs: 18, rt: 03, rd: 01, shmt: 00, funct: 22}
+afd30001 sw {opcode: 2b, rs(base): 1e, rt: 13, immediate(offset): 0001}
+8ec30000 lw {opcode: 23, rs(base): 16, rt: 03, immediate(offset): 0000}
+3c10009f lui {opcode: 0f, rs(base): 00, rt: 10, immediate(offset): 009f}
+333c00a1 andi {opcode: 0c, rs(base): 19, rt: 1c, immediate(offset): 00a1}
+3c1c0056 lui {opcode: 0f, rs(base): 00, rt: 1c, immediate(offset): 0056}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+178b0041 bne {opcode: 05, rs(base): 1c, rt: 0b, immediate(offset): 0041}
+ae200000 sw {opcode: 2b, rs(base): 11, rt: 00, immediate(offset): 0000}
+11ae0098 beq {opcode: 04, rs(base): 0d, rt: 0e, immediate(offset): 0098}
+02e3182a slt {opcode: 00, rs: 17, rt: 03, rd: 03, shmt: 00, funct: 2a}
+10e6008e beq {opcode: 04, rs(base): 07, rt: 06, immediate(offset): 008e}
+13c2ff8d beq {opcode: 04, rs(base): 1e, rt: 02, immediate(offset): ff8d}
+11550052 beq {opcode: 04, rs(base): 0a, rt: 15, immediate(offset): 0052}
+af87ff21 sw {opcode: 2b, rs(base): 1c, rt: 07, immediate(offset): ff21}
+01695024 and {opcode: 00, rs: 0b, rt: 09, rd: 0a, shmt: 00, funct: 24}
+8dac0000 lw {opcode: 23, rs(base): 0d, rt: 0c, immediate(offset): 0000}
+012d1025 or {opcode: 00, rs: 09, rt: 0d, rd: 02, shmt: 00, funct: 25}
+3569ff01 ori {opcode: 0d, rs(base): 0b, rt: 09, immediate(offset): ff01}
+08000006 j {opcode: 02, index: 0000006}
+34e5ff9b ori {opcode: 0d, rs(base): 07, rt: 05, immediate(offset): ff9b}
+0800004c j {opcode: 02, index: 000004c}
+142600e8 bne {opcode: 05, rs(base): 01, rt: 06, immediate(offset): 00e8}
+1400ff55 bne {opcode: 05, rs(base): 00, rt: 00, immediate(offset): ff55}
+01cee024 and {opcode: 00, rs: 0e, rt: 0e, rd: 1c, shmt: 00, funct: 24}
+3235ffb9 andi {opcode: 0c, rs(base): 11, rt: 15, immediate(offset): ffb9}
+1208005e beq {opcode: 04, rs(base): 10, rt: 08, immediate(offset): 005e}
+10770042 beq {opcode: 04, rs(base): 03, rt: 17, immediate(offset): 0042}
+aca2ffee sw {opcode: 2b, rs(base): 05, rt: 02, immediate(offset): ffee}
+3090ff4d andi {opcode: 0c, rs(base): 04, rt: 10, immediate(offset): ff4d}
+00724824 and {opcode: 00, rs: 03, rt: 12, rd: 09, shmt: 00, funct: 24}
+3554ffa2 ori {opcode: 0d, rs(base): 0a, rt: 14, immediate(offset): ffa2}
+3c020062 lui {opcode: 0f, rs(base): 00, rt: 02, immediate(offset): 0062}
+13590092 beq {opcode: 04, rs(base): 1a, rt: 19, immediate(offset): 0092}
+114800fa beq {opcode: 04, rs(base): 0a, rt: 08, immediate(offset): 00fa}
+0344202a slt {opcode: 00, rs: 1a, rt: 04, rd: 04, shmt: 00, funct: 2a}
+02b2682a slt {opcode: 00, rs: 15, rt: 12, rd: 0d, shmt: 00, funct: 2a}
+27e3007f addiu {opcode: 09, rs(base): 1f, rt: 03, immediate(offset): 007f}
+00958025 or {opcode: 00, rs: 04, rt: 15, rd: 10, shmt: 00, funct: 25}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+0357702a slt {opcode: 00, rs: 1a, rt: 17, rd: 0e, shmt: 00, funct: 2a}
+0207b02a slt {opcode: 00, rs: 10, rt: 07, rd: 16, shmt: 00, funct: 2a}
+02664822 sub {opcode: 00, rs: 13, rt: 06, rd: 09, shmt: 00, funct: 22}
+37aa0004 ori {opcode: 0d, rs(base): 1d, rt: 0a, immediate(offset): 0004}
+0336f025 or {opcode: 00, rs: 19, rt: 16, rd: 1e, shmt: 00, funct: 25}
+144cff60 bne {opcode: 05, rs(base): 02, rt: 0c, immediate(offset): ff60}
+14bb0004 bne {opcode: 05, rs(base): 05, rt: 1b, immediate(offset): 0004}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+136c00b6 beq {opcode: 04, rs(base): 1b, rt: 0c, immediate(offset): 00b6}
+27cd0035 addiu {opcode: 09, rs(base): 1e, rt: 0d, immediate(offset): 0035}
+ac7d0000 sw {opcode: 2b, rs(base): 03, rt: 1d, immediate(offset): 0000}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+3c0f0058 lui {opcode: 0f, rs(base): 00, rt: 0f, immediate(offset): 0058}
+acd00000 sw {opcode: 2b, rs(base): 06, rt: 10, immediate(offset): 0000}
+af600077 sw {opcode: 2b, rs(base): 1b, rt: 00, immediate(offset): 0077}
+3c0900ec lui {opcode: 0f, rs(base): 00, rt: 09, immediate(offset): 00ec}
+01ad582a slt {opcode: 00, rs: 0d, rt: 0d, rd: 0b, shmt: 00, funct: 2a}
+080000e1 j {opcode: 02, index: 00000e1}
+8c2e003f lw {opcode: 23, rs(base): 01, rt: 0e, immediate(offset): 003f}
+10f700e3 beq {opcode: 04, rs(base): 07, rt: 17, immediate(offset): 00e3}
+03f51025 or {opcode: 00, rs: 1f, rt: 15, rd: 02, shmt: 00, funct: 25}
+317900af andi {opcode: 0c, rs(base): 0b, rt: 19, immediate(offset): 00af}
+26fd007c addiu {opcode: 09, rs(base): 17, rt: 1d, immediate(offset): 007c}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+8fe7ffb6 lw {opcode: 23, rs(base): 1f, rt: 07, immediate(offset): ffb6}
+02cf5025 or {opcode: 00, rs: 16, rt: 0f, rd: 0a, shmt: 00, funct: 25}
+080000e2 j {opcode: 02, index: 00000e2}
+3c040030 lui {opcode: 0f, rs(base): 00, rt: 04, immediate(offset): 0030}
+3005002c andi {opcode: 0c, rs(base): 00, rt: 05, immediate(offset): 002c}
+03e99820 add {opcode: 00, rs: 1f, rt: 09, rd: 13, shmt: 00, funct: 20}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+3703ff45 ori {opcode: 0d, rs(base): 18, rt: 03, immediate(offset): ff45}
+2776008f addiu {opcode: 09, rs(base): 1b, rt: 16, immediate(offset): 008f}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+3173ffa8 andi {opcode: 0c, rs(base): 0b, rt: 13, immediate(offset): ffa8}
+1422ff98 bne {opcode: 05, rs(base): 01, rt: 02, immediate(offset): ff98}
+3790ff41 ori {opcode: 0d, rs(base): 1c, rt: 10, immediate(offset): ff41}
+080000e9 j {opcode: 02, index: 00000e9}
+373bff4c ori {opcode: 0d, rs(base): 19, rt: 1b, immediate(offset): ff4c}
+01f8e020 add {opcode: 00, rs: 0f, rt: 18, rd: 1c, shmt: 00, funct: 20}
+025a9022 sub {opcode: 00, rs: 12, rt: 1a, rd: 12, shmt: 00, funct: 22}
+260f00ae addiu {opcode: 09, rs(base): 10, rt: 0f, immediate(offset): 00ae}
+0210902a slt {opcode: 00, rs: 10, rt: 10, rd: 12, shmt: 00, funct: 2a}
+02c99824 and {opcode: 00, rs: 16, rt: 09, rd: 13, shmt: 00, funct: 24}
+02331822 sub {opcode: 00, rs: 11, rt: 13, rd: 03, shmt: 00, funct: 22}
+10500049 beq {opcode: 04, rs(base): 02, rt: 10, immediate(offset): 0049}
+aead0000 sw {opcode: 2b, rs(base): 15, rt: 0d, immediate(offset): 0000}
+02315822 sub {opcode: 00, rs: 11, rt: 11, rd: 0b, shmt: 00, funct: 22}
+039b1822 sub {opcode: 00, rs: 1c, rt: 1b, rd: 03, shmt: 00, funct: 22}
+11ca00bb beq {opcode: 04, rs(base): 0e, rt: 0a, immediate(offset): 00bb}
+03f9d022 sub {opcode: 00, rs: 1f, rt: 19, rd: 1a, shmt: 00, funct: 22}
+02bad022 sub {opcode: 00, rs: 15, rt: 1a, rd: 1a, shmt: 00, funct: 22}
+3473ff4f ori {opcode: 0d, rs(base): 03, rt: 13, immediate(offset): ff4f}
+1051ffbb beq {opcode: 04, rs(base): 02, rt: 11, immediate(offset): ffbb}
+02034822 sub {opcode: 00, rs: 10, rt: 03, rd: 09, shmt: 00, funct: 22}
+1480006c bne {opcode: 05, rs(base): 04, rt: 00, immediate(offset): 006c}
+039fd024 and {opcode: 00, rs: 1c, rt: 1f, rd: 1a, shmt: 00, funct: 24}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+3c0b007a lui {opcode: 0f, rs(base): 00, rt: 0b, immediate(offset): 007a}
+3c1a004e lui {opcode: 0f, rs(base): 00, rt: 1a, immediate(offset): 004e}
+00463820 add {opcode: 00, rs: 02, rt: 06, rd: 07, shmt: 00, funct: 20}
+134dff98 beq {opcode: 04, rs(base): 1a, rt: 0d, immediate(offset): ff98}
+037c482a slt {opcode: 00, rs: 1b, rt: 1c, rd: 09, shmt: 00, funct: 2a}
+378dff77 ori {opcode: 0d, rs(base): 1c, rt: 0d, immediate(offset): ff77}
+37aa00a6 ori {opcode: 0d, rs(base): 1d, rt: 0a, immediate(offset): 00a6}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+14f2fffd bne {opcode: 05, rs(base): 07, rt: 12, immediate(offset): fffd}
+3285ffc4 andi {opcode: 0c, rs(base): 14, rt: 05, immediate(offset): ffc4}
+01372020 add {opcode: 00, rs: 09, rt: 17, rd: 04, shmt: 00, funct: 20}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+8d9a0000 lw {opcode: 23, rs(base): 0c, rt: 1a, immediate(offset): 0000}
+03e8c020 add {opcode: 00, rs: 1f, rt: 08, rd: 18, shmt: 00, funct: 20}
+01c21820 add {opcode: 00, rs: 0e, rt: 02, rd: 03, shmt: 00, funct: 20}
+00e3e025 or {opcode: 00, rs: 07, rt: 03, rd: 1c, shmt: 00, funct: 25}
+aefc0052 sw {opcode: 2b, rs(base): 17, rt: 1c, immediate(offset): 0052}
+325f001c andi {opcode: 0c, rs(base): 12, rt: 1f, immediate(offset): 001c}
+0251f824 and {opcode: 00, rs: 12, rt: 11, rd: 1f, shmt: 00, funct: 24}
+34eb0003 ori {opcode: 0d, rs(base): 07, rt: 0b, immediate(offset): 0003}
+11c5ff06 beq {opcode: 04, rs(base): 0e, rt: 05, immediate(offset): ff06}
+10caffbd beq {opcode: 04, rs(base): 06, rt: 0a, immediate(offset): ffbd}
+301a0081 andi {opcode: 0c, rs(base): 00, rt: 1a, immediate(offset): 0081}
+02e1982a slt {opcode: 00, rs: 17, rt: 01, rd: 13, shmt: 00, funct: 2a}
+01549020 add {opcode: 00, rs: 0a, rt: 14, rd: 12, shmt: 00, funct: 20}
+02188822 sub {opcode: 00, rs: 10, rt: 18, rd: 11, shmt: 00, funct: 22}
+ad5dff47 sw {opcode: 2b, rs(base): 0a, rt: 1d, immediate(offset): ff47}
+319aff74 andi {opcode: 0c, rs(base): 0c, rt: 1a, immediate(offset): ff74}
+3614ff08 ori {opcode: 0d, rs(base): 10, rt: 14, immediate(offset): ff08}
+8c460000 lw {opcode: 23, rs(base): 02, rt: 06, immediate(offset): 0000}
+018a3024 and {opcode: 00, rs: 0c, rt: 0a, rd: 06, shmt: 00, funct: 24}
+35730084 ori {opcode: 0d, rs(base): 0b, rt: 13, immediate(offset): 0084}
+af47ffa0 sw {opcode: 2b, rs(base): 1a, rt: 07, immediate(offset): ffa0}
+0086d822 sub {opcode: 00, rs: 04, rt: 06, rd: 1b, shmt: 00, funct: 22}
+26350035 addiu {opcode: 09, rs(base): 11, rt: 15, immediate(offset): 0035}
+ad590000 sw {opcode: 2b, rs(base): 0a, rt: 19, immediate(offset): 0000}
+333000d3 andi {opcode: 0c, rs(base): 19, rt: 10, immediate(offset): 00d3}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+32c5ffcc andi {opcode: 0c, rs(base): 16, rt: 05, immediate(offset): ffcc}
+01c25024 and {opcode: 00, rs: 0e, rt: 02, rd: 0a, shmt: 00, funct: 24}
+31770000 andi {opcode: 0c, rs(base): 0b, rt: 17, immediate(offset): 0000}
+af510000 sw {opcode: 2b, rs(base): 1a, rt: 11, immediate(offset): 0000}
+ac710000 sw {opcode: 2b, rs(base): 03, rt: 11, immediate(offset): 0000}
+3326006c andi {opcode: 0c, rs(base): 19, rt: 06, immediate(offset): 006c}
+8c200000 lw {opcode: 23, rs(base): 01, rt: 00, immediate(offset): 0000}
+264d0007 addiu {opcode: 09, rs(base): 12, rt: 0d, immediate(offset): 0007}
+af150097 sw {opcode: 2b, rs(base): 18, rt: 15, immediate(offset): 0097}
+03145825 or {opcode: 00, rs: 18, rt: 14, rd: 0b, shmt: 00, funct: 25}
+32acffab andi {opcode: 0c, rs(base): 15, rt: 0c, immediate(offset): ffab}
+37c70053 ori {opcode: 0d, rs(base): 1e, rt: 07, immediate(offset): 0053}
+261e0066 addiu {opcode: 09, rs(base): 10, rt: 1e, immediate(offset): 0066}
+000e382a slt {opcode: 00, rs: 00, rt: 0e, rd: 07, shmt: 00, funct: 2a}
+01e9e022 sub {opcode: 00, rs: 0f, rt: 09, rd: 1c, shmt: 00, funct: 22}
+ad580000 sw {opcode: 2b, rs(base): 0a, rt: 18, immediate(offset): 0000}
+080000af j {opcode: 02, index: 00000af}
+03b25025 or {opcode: 00, rs: 1d, rt: 12, rd: 0a, shmt: 00, funct: 25}
+8e440062 lw {opcode: 23, rs(base): 12, rt: 04, immediate(offset): 0062}
+144effe4 bne {opcode: 05, rs(base): 02, rt: 0e, immediate(offset): ffe4}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+012f2022 sub {opcode: 00, rs: 09, rt: 0f, rd: 04, shmt: 00, funct: 22}
+03aa2024 and {opcode: 00, rs: 1d, rt: 0a, rd: 04, shmt: 00, funct: 24}
+02204820 add {opcode: 00, rs: 11, rt: 00, rd: 09, shmt: 00, funct: 20}
+080000fd j {opcode: 02, index: 00000fd}
+01c91025 or {opcode: 00, rs: 0e, rt: 09, rd: 02, shmt: 00, funct: 25}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+24f1000b addiu {opcode: 09, rs(base): 07, rt: 11, immediate(offset): 000b}
+02b3002a slt {opcode: 00, rs: 15, rt: 13, rd: 00, shmt: 00, funct: 2a}
+3745ffd0 ori {opcode: 0d, rs(base): 1a, rt: 05, immediate(offset): ffd0}
+03d98020 add {opcode: 00, rs: 1e, rt: 19, rd: 10, shmt: 00, funct: 20}
+3c1100fc lui {opcode: 0f, rs(base): 00, rt: 11, immediate(offset): 00fc}
+0800004e j {opcode: 02, index: 000004e}
+32e7ffcb andi {opcode: 0c, rs(base): 17, rt: 07, immediate(offset): ffcb}
+01b80025 or {opcode: 00, rs: 0d, rt: 18, rd: 00, shmt: 00, funct: 25}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+2733002e addiu {opcode: 09, rs(base): 19, rt: 13, immediate(offset): 002e}
+8f82ffd3 lw {opcode: 23, rs(base): 1c, rt: 02, immediate(offset): ffd3}
+01a02022 sub {opcode: 00, rs: 0d, rt: 00, rd: 04, shmt: 00, funct: 22}
+035b382a slt {opcode: 00, rs: 1a, rt: 1b, rd: 07, shmt: 00, funct: 2a}
+08000059 j {opcode: 02, index: 0000059}
+01d5c824 and {opcode: 00, rs: 0e, rt: 15, rd: 19, shmt: 00, funct: 24}
+8c00000f lw {opcode: 23, rs(base): 00, rt: 00, immediate(offset): 000f}
+30c3009f andi {opcode: 0c, rs(base): 06, rt: 03, immediate(offset): 009f}
+109800e2 beq {opcode: 04, rs(base): 04, rt: 18, immediate(offset): 00e2}
+24e200fc addiu {opcode: 09, rs(base): 07, rt: 02, immediate(offset): 00fc}
+af990000 sw {opcode: 2b, rs(base): 1c, rt: 19, immediate(offset): 0000}
+0021a020 add {opcode: 00, rs: 01, rt: 01, rd: 14, shmt: 00, funct: 20}
+039f9824 and {opcode: 00, rs: 1c, rt: 1f, rd: 13, shmt: 00, funct: 24}
+080000c1 j {opcode: 02, index: 00000c1}
+adf60000 sw {opcode: 2b, rs(base): 0f, rt: 16, immediate(offset): 0000}
+02b6b82a slt {opcode: 00, rs: 15, rt: 16, rd: 17, shmt: 00, funct: 2a}
+246f00f6 addiu {opcode: 09, rs(base): 03, rt: 0f, immediate(offset): 00f6}
+8ea30000 lw {opcode: 23, rs(base): 15, rt: 03, immediate(offset): 0000}
+33940080 andi {opcode: 0c, rs(base): 1c, rt: 14, immediate(offset): 0080}
+2449005e addiu {opcode: 09, rs(base): 02, rt: 09, immediate(offset): 005e}
+034b6024 and {opcode: 00, rs: 1a, rt: 0b, rd: 0c, shmt: 00, funct: 24}
+02f55822 sub {opcode: 00, rs: 17, rt: 15, rd: 0b, shmt: 00, funct: 22}
+001cf820 add {opcode: 00, rs: 00, rt: 1c, rd: 1f, shmt: 00, funct: 20}
+024a6024 and {opcode: 00, rs: 12, rt: 0a, rd: 0c, shmt: 00, funct: 24}
+14d8ffa2 bne {opcode: 05, rs(base): 06, rt: 18, immediate(offset): ffa2}
+11b1ff05 beq {opcode: 04, rs(base): 0d, rt: 11, immediate(offset): ff05}
+34f70034 ori {opcode: 0d, rs(base): 07, rt: 17, immediate(offset): 0034}
+360c0042 ori {opcode: 0d, rs(base): 10, rt: 0c, immediate(offset): 0042}
+01c31022 sub {opcode: 00, rs: 0e, rt: 03, rd: 02, shmt: 00, funct: 22}
+31a9ffa9 andi {opcode: 0c, rs(base): 0d, rt: 09, immediate(offset): ffa9}
+151e0006 bne {opcode: 05, rs(base): 08, rt: 1e, immediate(offset): 0006}
+afc3ffeb sw {opcode: 2b, rs(base): 1e, rt: 03, immediate(offset): ffeb}
+080000a4 j {opcode: 02, index: 00000a4}
+33310091 andi {opcode: 0c, rs(base): 19, rt: 11, immediate(offset): 0091}
+02c16824 and {opcode: 00, rs: 16, rt: 01, rd: 0d, shmt: 00, funct: 24}
+ac930000 sw {opcode: 2b, rs(base): 04, rt: 13, immediate(offset): 0000}
+01d3e825 or {opcode: 00, rs: 0e, rt: 13, rd: 1d, shmt: 00, funct: 25}
+080000b5 j {opcode: 02, index: 00000b5}
+8ffe003e lw {opcode: 23, rs(base): 1f, rt: 1e, immediate(offset): 003e}
+3c09006b lui {opcode: 0f, rs(base): 00, rt: 09, immediate(offset): 006b}
+15c1ffa2 bne {opcode: 05, rs(base): 0e, rt: 01, immediate(offset): ffa2}
+039d482a slt {opcode: 00, rs: 1c, rt: 1d, rd: 09, shmt: 00, funct: 2a}
+15dcff3a bne {opcode: 05, rs(base): 0e, rt: 1c, immediate(offset): ff3a}
+0078b024 and {opcode: 00, rs: 03, rt: 18, rd: 16, shmt: 00, funct: 24}
+010a8820 add {opcode: 00, rs: 08, rt: 0a, rd: 11, shmt: 00, funct: 20}
+8f860000 lw {opcode: 23, rs(base): 1c, rt: 06, immediate(offset): 0000}
+0082582a slt {opcode: 00, rs: 04, rt: 02, rd: 0b, shmt: 00, funct: 2a}
+0800008a j {opcode: 02, index: 000008a}
+3c05008a lui {opcode: 0f, rs(base): 00, rt: 05, immediate(offset): 008a}
+adb4ffe0 sw {opcode: 2b, rs(base): 0d, rt: 14, immediate(offset): ffe0}
+266a0025 addiu {opcode: 09, rs(base): 13, rt: 0a, immediate(offset): 0025}
+3740ff13 ori {opcode: 0d, rs(base): 1a, rt: 00, immediate(offset): ff13}
+0217b82a slt {opcode: 00, rs: 10, rt: 17, rd: 17, shmt: 00, funct: 2a}
+3c0f002b lui {opcode: 0f, rs(base): 00, rt: 0f, immediate(offset): 002b}
+8ebd00ac lw {opcode: 23, rs(base): 15, rt: 1d, immediate(offset): 00ac}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+02628820 add {opcode: 00, rs: 13, rt: 02, rd: 11, shmt: 00, funct: 20}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+8d550000 lw {opcode: 23, rs(base): 0a, rt: 15, immediate(offset): 0000}
+126dffc2 beq {opcode: 04, rs(base): 13, rt: 0d, immediate(offset): ffc2}
+00b6f025 or {opcode: 00, rs: 05, rt: 16, rd: 1e, shmt: 00, funct: 25}
+35ca0027 ori {opcode: 0d, rs(base): 0e, rt: 0a, immediate(offset): 0027}
+35aeffa8 ori {opcode: 0d, rs(base): 0d, rt: 0e, immediate(offset): ffa8}
+af2bff38 sw {opcode: 2b, rs(base): 19, rt: 0b, immediate(offset): ff38}
+addeffd2 sw {opcode: 2b, rs(base): 0e, rt: 1e, immediate(offset): ffd2}
+0015382a slt {opcode: 00, rs: 00, rt: 15, rd: 07, shmt: 00, funct: 2a}
+8f5a0000 lw {opcode: 23, rs(base): 1a, rt: 1a, immediate(offset): 0000}
+0077e024 and {opcode: 00, rs: 03, rt: 17, rd: 1c, shmt: 00, funct: 24}
+080000a9 j {opcode: 02, index: 00000a9}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+00ddf025 or {opcode: 00, rs: 06, rt: 1d, rd: 1e, shmt: 00, funct: 25}
+02b42022 sub {opcode: 00, rs: 15, rt: 14, rd: 04, shmt: 00, funct: 22}
+12fdffcf beq {opcode: 04, rs(base): 17, rt: 1d, immediate(offset): ffcf}
+02bd7822 sub {opcode: 00, rs: 15, rt: 1d, rd: 0f, shmt: 00, funct: 22}
+3c0a00ed lui {opcode: 0f, rs(base): 00, rt: 0a, immediate(offset): 00ed}
+8d7f0000 lw {opcode: 23, rs(base): 0b, rt: 1f, immediate(offset): 0000}
+03df182a slt {opcode: 00, rs: 1e, rt: 1f, rd: 03, shmt: 00, funct: 2a}
+34a7009b ori {opcode: 0d, rs(base): 05, rt: 07, immediate(offset): 009b}
+368900c7 ori {opcode: 0d, rs(base): 14, rt: 09, immediate(offset): 00c7}
+33d20023 andi {opcode: 0c, rs(base): 1e, rt: 12, immediate(offset): 0023}
+0232c82a slt {opcode: 00, rs: 11, rt: 12, rd: 19, shmt: 00, funct: 2a}
+aff4ff4e sw {opcode: 2b, rs(base): 1f, rt: 14, immediate(offset): ff4e}
+0121f022 sub {opcode: 00, rs: 09, rt: 01, rd: 1e, shmt: 00, funct: 22}
+01bf2022 sub {opcode: 00, rs: 0d, rt: 1f, rd: 04, shmt: 00, funct: 22}
+031ae020 add {opcode: 00, rs: 18, rt: 1a, rd: 1c, shmt: 00, funct: 20}
+00a0a024 and {opcode: 00, rs: 05, rt: 00, rd: 14, shmt: 00, funct: 24}
+3c0d00bd lui {opcode: 0f, rs(base): 00, rt: 0d, immediate(offset): 00bd}
+3c1700a1 lui {opcode: 0f, rs(base): 00, rt: 17, immediate(offset): 00a1}
+374b0033 ori {opcode: 0d, rs(base): 1a, rt: 0b, immediate(offset): 0033}
+8e4cffd4 lw {opcode: 23, rs(base): 12, rt: 0c, immediate(offset): ffd4}
+3c0400c5 lui {opcode: 0f, rs(base): 00, rt: 04, immediate(offset): 00c5}
+03a67822 sub {opcode: 00, rs: 1d, rt: 06, rd: 0f, shmt: 00, funct: 22}
+3266ff37 andi {opcode: 0c, rs(base): 13, rt: 06, immediate(offset): ff37}
+3c09003c lui {opcode: 0f, rs(base): 00, rt: 09, immediate(offset): 003c}
+01424025 or {opcode: 00, rs: 0a, rt: 02, rd: 08, shmt: 00, funct: 25}
+33f80042 andi {opcode: 0c, rs(base): 1f, rt: 18, immediate(offset): 0042}
+34150046 ori {opcode: 0d, rs(base): 00, rt: 15, immediate(offset): 0046}
+110fff9c beq {opcode: 04, rs(base): 08, rt: 0f, immediate(offset): ff9c}
+8cba0000 lw {opcode: 23, rs(base): 05, rt: 1a, immediate(offset): 0000}
+ad010000 sw {opcode: 2b, rs(base): 08, rt: 01, immediate(offset): 0000}
+1327ffd0 beq {opcode: 04, rs(base): 19, rt: 07, immediate(offset): ffd0}
+029bf824 and {opcode: 00, rs: 14, rt: 1b, rd: 1f, shmt: 00, funct: 24}
+08000050 j {opcode: 02, index: 0000050}
+3c1c008a lui {opcode: 0f, rs(base): 00, rt: 1c, immediate(offset): 008a}
+307bffba andi {opcode: 0c, rs(base): 03, rt: 1b, immediate(offset): ffba}
+26500012 addiu {opcode: 09, rs(base): 12, rt: 10, immediate(offset): 0012}
+0800004d j {opcode: 02, index: 000004d}
+02f83024 and {opcode: 00, rs: 17, rt: 18, rd: 06, shmt: 00, funct: 24}
+8cda0000 lw {opcode: 23, rs(base): 06, rt: 1a, immediate(offset): 0000}
+03a57020 add {opcode: 00, rs: 1d, rt: 05, rd: 0e, shmt: 00, funct: 20}
+03c01025 or {opcode: 00, rs: 1e, rt: 00, rd: 02, shmt: 00, funct: 25}
+12e100ec beq {opcode: 04, rs(base): 17, rt: 01, immediate(offset): 00ec}
+8d41ff43 lw {opcode: 23, rs(base): 0a, rt: 01, immediate(offset): ff43}
+03674824 and {opcode: 00, rs: 1b, rt: 07, rd: 09, shmt: 00, funct: 24}
+256500e4 addiu {opcode: 09, rs(base): 0b, rt: 05, immediate(offset): 00e4}
+3192ff63 andi {opcode: 0c, rs(base): 0c, rt: 12, immediate(offset): ff63}
+1682ff18 bne {opcode: 05, rs(base): 14, rt: 02, immediate(offset): ff18}
+15bc0023 bne {opcode: 05, rs(base): 0d, rt: 1c, immediate(offset): 0023}
+03db0024 and {opcode: 00, rs: 1e, rt: 1b, rd: 00, shmt: 00, funct: 24}
+ae3f0011 sw {opcode: 2b, rs(base): 11, rt: 1f, immediate(offset): 0011}
+08000040 j {opcode: 02, index: 0000040}
+110cff63 beq {opcode: 04, rs(base): 08, rt: 0c, immediate(offset): ff63}
+08000038 j {opcode: 02, index: 0000038}
+338a0070 andi {opcode: 0c, rs(base): 1c, rt: 0a, immediate(offset): 0070}
+015be020 add {opcode: 00, rs: 0a, rt: 1b, rd: 1c, shmt: 00, funct: 20}
+3c0700a2 lui {opcode: 0f, rs(base): 00, rt: 07, immediate(offset): 00a2}
+03518024 and {opcode: 00, rs: 1a, rt: 11, rd: 10, shmt: 00, funct: 24}
+00a2402a slt {opcode: 00, rs: 05, rt: 02, rd: 08, shmt: 00, funct: 2a}
+361f00a7 ori {opcode: 0d, rs(base): 10, rt: 1f, immediate(offset): 00a7}
+03cd882a slt {opcode: 00, rs: 1e, rt: 0d, rd: 11, shmt: 00, funct: 2a}
+0255a822 sub {opcode: 00, rs: 12, rt: 15, rd: 15, shmt: 00, funct: 22}
+3389ff81 andi {opcode: 0c, rs(base): 1c, rt: 09, immediate(offset): ff81}
+107bffbc beq {opcode: 04, rs(base): 03, rt: 1b, immediate(offset): ffbc}
+3074ff4f andi {opcode: 0c, rs(base): 03, rt: 14, immediate(offset): ff4f}
+3c0e0073 lui {opcode: 0f, rs(base): 00, rt: 0e, immediate(offset): 0073}
+0800000d j {opcode: 02, index: 000000d}
+26290049 addiu {opcode: 09, rs(base): 11, rt: 09, immediate(offset): 0049}
+02964024 and {opcode: 00, rs: 14, rt: 16, rd: 08, shmt: 00, funct: 24}
+8c110098 lw {opcode: 23, rs(base): 00, rt: 11, immediate(offset): 0098}
+01201022 sub {opcode: 00, rs: 09, rt: 00, rd: 02, shmt: 00, funct: 22}
+08000096 j {opcode: 02, index: 0000096}
+080000e5 j {opcode: 02, index: 00000e5}
+161300ad bne {opcode: 05, rs(base): 10, rt: 13, immediate(offset): 00ad}
+333d00f3 andi {opcode: 0c, rs(base): 19, rt: 1d, immediate(offset): 00f3}
+31dd0048 andi {opcode: 0c, rs(base): 0e, rt: 1d, immediate(offset): 0048}
+17200024 bne {opcode: 05, rs(base): 19, rt: 00, immediate(offset): 0024}
+0104282a slt {opcode: 00, rs: 08, rt: 04, rd: 05, shmt: 00, funct: 2a}
+af000000 sw {opcode: 2b, rs(base): 18, rt: 00, immediate(offset): 0000}
+30f1ffc2 andi {opcode: 0c, rs(base): 07, rt: 11, immediate(offset): ffc2}
+03ca2825 or {opcode: 00, rs: 1e, rt: 0a, rd: 05, shmt: 00, funct: 25}
+1450ff3e bne {opcode: 05, rs(base): 02, rt: 10, immediate(offset): ff3e}
+ad0a0000 sw {opcode: 2b, rs(base): 08, rt: 0a, immediate(offset): 0000}
+0072d02a slt {opcode: 00, rs: 03, rt: 12, rd: 1a, shmt: 00, funct: 2a}
+038f0025 or {opcode: 00, rs: 1c, rt: 0f, rd: 00, shmt: 00, funct: 25}
+025a5825 or {opcode: 00, rs: 12, rt: 1a, rd: 0b, shmt: 00, funct: 25}
+01d14822 sub {opcode: 00, rs: 0e, rt: 11, rd: 09, shmt: 00, funct: 22}
+3467ffeb ori {opcode: 0d, rs(base): 03, rt: 07, immediate(offset): ffeb}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+2547004d addiu {opcode: 09, rs(base): 0a, rt: 07, immediate(offset): 004d}
+8fca0000 lw {opcode: 23, rs(base): 1e, rt: 0a, immediate(offset): 0000}
+3c1e0082 lui {opcode: 0f, rs(base): 00, rt: 1e, immediate(offset): 0082}
+03329824 and {opcode: 00, rs: 19, rt: 12, rd: 13, shmt: 00, funct: 24}
+035ee825 or {opcode: 00, rs: 1a, rt: 1e, rd: 1d, shmt: 00, funct: 25}
+3c1100f9 lui {opcode: 0f, rs(base): 00, rt: 11, immediate(offset): 00f9}
+25a300a1 addiu {opcode: 09, rs(base): 0d, rt: 03, immediate(offset): 00a1}
+16a5ff2f bne {opcode: 05, rs(base): 15, rt: 05, immediate(offset): ff2f}
+24b00071 addiu {opcode: 09, rs(base): 05, rt: 10, immediate(offset): 0071}
+080000bd j {opcode: 02, index: 00000bd}
+01dcb020 add {opcode: 00, rs: 0e, rt: 1c, rd: 16, shmt: 00, funct: 20}
+02fd5024 and {opcode: 00, rs: 17, rt: 1d, rd: 0a, shmt: 00, funct: 24}
+0800001a j {opcode: 02, index: 000001a}
+31ac007b andi {opcode: 0c, rs(base): 0d, rt: 0c, immediate(offset): 007b}
+32feffed andi {opcode: 0c, rs(base): 17, rt: 1e, immediate(offset): ffed}
+00491820 add {opcode: 00, rs: 02, rt: 09, rd: 03, shmt: 00, funct: 20}
+32c9ff05 andi {opcode: 0c, rs(base): 16, rt: 09, immediate(offset): ff05}
+8fcf0000 lw {opcode: 23, rs(base): 1e, rt: 0f, immediate(offset): 0000}
+32a80039 andi {opcode: 0c, rs(base): 15, rt: 08, immediate(offset): 0039}
+02723822 sub {opcode: 00, rs: 13, rt: 12, rd: 07, shmt: 00, funct: 22}
+03d49824 and {opcode: 00, rs: 1e, rt: 14, rd: 13, shmt: 00, funct: 24}
+8e6e0020 lw {opcode: 23, rs(base): 13, rt: 0e, immediate(offset): 0020}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+25f20002 addiu {opcode: 09, rs(base): 0f, rt: 12, immediate(offset): 0002}
+0361302a slt {opcode: 00, rs: 1b, rt: 01, rd: 06, shmt: 00, funct: 2a}
+0140c020 add {opcode: 00, rs: 0a, rt: 00, rd: 18, shmt: 00, funct: 20}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+00fc7824 and {opcode: 00, rs: 07, rt: 1c, rd: 0f, shmt: 00, funct: 24}
+0394382a slt {opcode: 00, rs: 1c, rt: 14, rd: 07, shmt: 00, funct: 2a}
+0000000c syscall {opcode: 00, code: 000000, funct: 0c}
+adfe0000 sw {opcode: 2b, rs(base): 0f, rt: 1e, immediate(offset): 0000}

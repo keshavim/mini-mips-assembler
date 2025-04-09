@@ -19,6 +19,11 @@ public class Disassembler {
     }
     private static String decodeRtype(long word){
         int funct = (int)(word & 0x3F); // Last 6 bits for R-type
+
+        if(funct == 0x0c){
+            return "syscall {opcode: 00, code: 000000, funct: 0c}";
+        }
+
         int rs = (int)(word >>> 21) & 0x1F;
         int rt = (int)(word >>> 16) & 0x1F;
         int rd = (int)(word >>> 11) & 0x1F;
@@ -44,7 +49,4 @@ public class Disassembler {
         String memonic = Mips.Instructions.getNameFromValue(opcode);
         return String.format("%s {opcode: %02x, index: %07x}", memonic, opcode, address);
     }
-
-
-
 }

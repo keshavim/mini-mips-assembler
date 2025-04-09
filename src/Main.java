@@ -10,26 +10,32 @@ public class Main {
 
     public static void main(String[] args)  {
 
+        if(args[0].equals("-d") || args[0].equals("--dasm")) {
+            String prefix = "";
+            if (!args[1].substring(0, 2).equalsIgnoreCase("0x")) {
+                prefix = "0x";
+            }
 
-        Tests.dissassemble_test();
+            for(int i = 0; i < args.length; i++){
+                String s = Disassembler.disassemble(Mips.parseNumber(prefix + args[1]));
 
+                System.out.println(s);
+            }
 
+            return;
+        }
 
-
-
-//        System.out.println((100000 >> 16) & 0xFFFF);
-//
-//        ArrayList<String> asmfiles = new ArrayList<>();
-//        FileAssembler fasm = new FileAssembler();
-//        for(int i = 0; i < args.length; i++){
-//            if(args[i].equals("-o")){
-//                i++;
-//                fasm.setOutputdir(args[i]);
-//                continue;
-//            }
-//            asmfiles.add(args[i]);
-//        }
-//        asmfiles.forEach(fasm::assembleFile);
+        ArrayList<String> asmfiles = new ArrayList<>();
+        FileAssembler fasm = new FileAssembler();
+        for(int i = 0; i < args.length; i++){
+            if(args[i].equals("-o")){
+                i++;
+                fasm.setOutputdir(args[i]);
+                continue;
+            }
+            asmfiles.add(args[i]);
+        }
+        asmfiles.forEach(fasm::assembleFile);
 
 
 

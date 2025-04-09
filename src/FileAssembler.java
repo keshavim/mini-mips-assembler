@@ -47,8 +47,6 @@ public class FileAssembler {
             i = file.lastIndexOf('\\');
         }
 
-
-
         String name = file.substring(i);
         String dir = file.substring(0, i) ;
         if(outputdir == null)
@@ -155,7 +153,6 @@ public class FileAssembler {
     private void assemble_data(String dir, String name) {
         try {
             BufferedReader asmFile = new BufferedReader(new FileReader(dir+name));
-
 
             BufferedWriter dataFile = new BufferedWriter(new FileWriter(outputdir +fileDir+"/data.txt"));
 

@@ -18,6 +18,10 @@ public class Assembler {
         return line.split(delim);
     }
 
+    public String disassemble_word(long word){
+        return Disassembler.disassemble(word);
+    }
+
     public long[] assemble_word(String word){
         String[] word_split = word.split(delim);
         Mips.Instructions instruction = Mips.Instructions.getByName(word_split[0]);

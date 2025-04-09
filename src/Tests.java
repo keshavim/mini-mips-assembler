@@ -78,6 +78,34 @@ public class Tests {
 
     }
     public static void dissassemble_test(){
+
+        String filename = "Tests/test_instructions_prog2.txt";
+        Assembler asm = new Assembler();
+        try(BufferedReader br = new BufferedReader(new FileReader(filename))){
+            String line;
+            while((line = br.readLine()) != null){
+
+                long instruction = Mips.parseNumber("0x"+line.substring(0, 8));
+
+                String expected = line.substring(9);
+
+                String result = Disassembler.disassemble(instruction);
+
+
+
+                if(result.equals(expected)){
+                    System.out.println(GREEN +"Passes: "+line + RESET);
+                }
+                else{
+                    System.err.println("Failed: \nresult: "+result+"\nexpected: "+expected);
+                    System.exit(1);
+                }
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+
         //addiu {opcode: 09, rs(base): 17, rt: 1b, immediate(offset): 003e}
         //ori {opcode: 0d, rs(base): 00, rt: 13, immediate(offset): ff20}
         //sw {opcode: 2b, rs(base): 14, rt: 14, immediate(offset): 0000}

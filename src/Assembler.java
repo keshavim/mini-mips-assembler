@@ -18,7 +18,7 @@ public class Assembler {
         return line.split(delim);
     }
 
-    public String disassemble_word(long word){
+    public MipsMap disassemble_word(long word){
         return Disassembler.disassemble(word);
     }
 

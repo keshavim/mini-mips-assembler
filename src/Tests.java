@@ -89,11 +89,11 @@ public class Tests {
 
                 String expected = line.substring(9);
 
-                String result = Disassembler.disassemble(instruction);
+                MipsMap result = Disassembler.disassemble(instruction);
 
 
 
-                if(result.equals(expected)){
+                if(result.toString().equals(expected)){
                     System.out.println(GREEN +"Passes: "+line + RESET);
                 }
                 else{
@@ -128,5 +128,17 @@ public class Tests {
         // and {opcode: 00, rs: 17, rt: 14, rd: 07, shmt: 00, funct: 24}
         long[] rwords = new long[]{ 0x027b4822, 0x030a0820, 0x00dfe02a, 0x02f43824};
         _deasmble_test(rwords);
+    }
+
+    public static void test_simulator(String[] args){
+        for(String ar: args){
+            System.out.printf("%s\n", ar);
+        }
+        try{
+            MipsSimulator sim = new MipsSimulator(args);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }

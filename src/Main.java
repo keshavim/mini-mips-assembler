@@ -10,6 +10,13 @@ public class Main {
 
     public static void main(String[] args)  {
 
+        Tests.dissassemble_test();
+        System.exit(0);
+
+
+        Tests.test_simulator(args);
+
+
         if(args[0].equals("-d") || args[0].equals("--dasm")) {
             String prefix = "";
             if (!args[1].substring(0, 2).equalsIgnoreCase("0x")) {
@@ -17,7 +24,7 @@ public class Main {
             }
 
             for(int i = 0; i < args.length; i++){
-                String s = Disassembler.disassemble(Mips.parseNumber(prefix + args[1]));
+                MipsMap s = Disassembler.disassemble(Mips.parseNumber(prefix + args[1]));
 
                 System.out.println(s);
             }

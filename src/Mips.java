@@ -35,6 +35,7 @@ public class Mips {
     public enum Instructions {
         ADD(0x20, Types.Register),
         ADDU(0x21, Types.Register),
+        ADDI(0x8, Types.Immediate),
         ADDIU(0x9, Types.Immediate),
         AND(0x24, Types.Register),
         ANDI(0xC, Types.Immediate),

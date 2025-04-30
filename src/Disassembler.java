@@ -55,9 +55,10 @@ public class Disassembler {
     private static MipsMap decodeJtype(long word){
         int address = (int)(word & 0x03FFFFFF); // Last 26 bits for J-type
         int opcode = (int)(word >>> 26) & 0x3F; // Extract opcode (6 bits)
+        int absoluteAddress = (address << 2) | (Mips.TEXT_ADDRESS & 0xF0000000);
         return new MipsMap(Mips.Types.Jump, new HashMap<>(){{
             put("opcode",opcode);
-            put("address",address);
+            put("address",absoluteAddress);
         }});
     }
 }

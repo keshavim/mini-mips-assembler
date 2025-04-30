@@ -10,11 +10,11 @@ public class Main {
 
     public static void main(String[] args)  {
 
-        Tests.dissassemble_test();
-        System.exit(0);
 
 
         Tests.test_simulator(args);
+        System.exit(0);
+
 
 
         if(args[0].equals("-d") || args[0].equals("--dasm")) {

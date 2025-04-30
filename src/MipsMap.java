@@ -21,6 +21,9 @@ public class MipsMap {
                 Mips.Instructions.getNameFromValue(map.get("funct")) :
                 Mips.Instructions.getNameFromValue(map.get("opcode"));
     }
+    public Mips.Instructions getInstruction(){
+        return Mips.Instructions.getByName(getName());
+    }
 
     @Override
     public String toString() {
@@ -29,7 +32,7 @@ public class MipsMap {
                     getName(), map.get("rs"), map.get("rt"), map.get("rd"), map.get("funct"));
         }
         else if(this.type == Mips.Types.Jump){
-            return String.format("%s {opcode: %02x, index: %07x}", getName(), map.get("opcode"),map.get("address"));
+            return String.format("%s {opcode: %02x, index: %07x}", getName(), map.get("opcode"), (map.get("address") >> 2));
 
         }
         else if (this.type == Mips.Types.Special){

@@ -16,7 +16,7 @@ public class MipsSimulator {
 
     private static class MipsState{
         int[] registers = new int[32];
-        ByteBuffer memory = ByteBuffer.allocate(4096);
+        ByteBuffer memory = ByteBuffer.allocate(4096 * 4096);
         int stack_start = 0;
         int pc = 0;
         boolean running = true;
@@ -37,8 +37,8 @@ public class MipsSimulator {
             memory.put(bos.toByteArray());
             memory.position(0);
             stack_start = memory.remaining();
-            registers[29] = 4092;
-            registers[1] = Mips.DATA_ADDRESS;
+            registers[29] = (4096 * 4096) - 4; // set sp
+            registers[1] = Mips.DATA_ADDRESS; // set at
         }
 
         public String readCString(int startAddress) {
@@ -112,11 +112,11 @@ public class MipsSimulator {
                 state.registers[m.get("rt")] = result;
             }
             case SUB -> {
-                int val = m.get("rt");
-                if (val > Short.MAX_VALUE){
-                    val -= Short.MAX_VALUE*2+2;
-                }
-                state.registers[m.get("rd")] = state.registers[m.get("rs")] - val;
+                int rs = state.registers[m.get("rs")];
+                int rt = state.registers[m.get("rt")];
+                int result = rs - rt;
+
+                state.registers[m.get("rd")] = result;
             }
             case AND -> {
                 state.registers[m.get("rd")] = state.registers[m.get("rs")] & state.registers[m.get("rt")];
@@ -179,9 +179,9 @@ public class MipsSimulator {
         }
     }
 
-    public MipsSimulator(String[] args) throws IOException {
-        List<String> text =  Files.readAllLines(Paths.get(args[0]));
-        MipsState state = new MipsState(Path.of(args[1]));
+    public MipsSimulator(String datafile, String textfile) throws IOException {
+        List<String> text =  Files.readAllLines(Paths.get(textfile));
+        MipsState state = new MipsState(Path.of(datafile));
 
         while(state.running){
             long num = Long.parseLong(text.get(state.pc), 16);

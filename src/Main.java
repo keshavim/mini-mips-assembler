@@ -1,4 +1,5 @@
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 
@@ -11,12 +12,25 @@ public class Main {
     public static void main(String[] args)  {
 
 
+        if(args[0].equals("--run")){
+            String datafile, textfile;
+            if(args[1].contains(".data")){
+                datafile = args[1];
+                textfile = args[2];
+            }
+            else{
+                datafile = args[2];
+                textfile = args[1];
+            }
+            try{
+                MipsSimulator sim = new MipsSimulator(datafile, textfile);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            return;
+        }
 
-        Tests.test_simulator(args);
-        System.exit(0);
-
-
-
+        //old stuff
         if(args[0].equals("-d") || args[0].equals("--dasm")) {
             String prefix = "";
             if (!args[1].substring(0, 2).equalsIgnoreCase("0x")) {

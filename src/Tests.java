@@ -134,11 +134,7 @@ public class Tests {
         for(String ar: args){
             System.out.printf("%s\n", ar);
         }
-        try{
-            MipsSimulator sim = new MipsSimulator(args);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+
 
     }
 }

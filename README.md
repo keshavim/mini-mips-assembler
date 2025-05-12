@@ -26,3 +26,4 @@ this will output
 `and {opcode: 00, rs: 17, rt: 14, rd: 07, shmt: 00, funct: 24}`
 
 
+to run a asm file with limited instruction use --run with the .data and .text files which can be created from mars
